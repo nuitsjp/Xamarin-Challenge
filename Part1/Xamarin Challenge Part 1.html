@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Xamarin Challenge Part 1</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<style type="text/css">
+.highlight  { background: #ffffff; }
+.highlight .c { color: #999988; font-style: italic } /* Comment */
+.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.highlight .k { font-weight: bold } /* Keyword */
+.highlight .o { font-weight: bold } /* Operator */
+.highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
+.highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
+.highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #aa0000 } /* Generic.Error */
+.highlight .gh { color: #999999 } /* Generic.Heading */
+.highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
+.highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #555555 } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #aaaaaa } /* Generic.Subheading */
+.highlight .gt { color: #aa0000 } /* Generic.Traceback */
+.highlight .kc { font-weight: bold } /* Keyword.Constant */
+.highlight .kd { font-weight: bold } /* Keyword.Declaration */
+.highlight .kp { font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
+.highlight .m { color: #009999 } /* Literal.Number */
+.highlight .s { color: #d14 } /* Literal.String */
+.highlight .na { color: #008080 } /* Name.Attribute */
+.highlight .nb { color: #0086B3 } /* Name.Builtin */
+.highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
+.highlight .no { color: #008080 } /* Name.Constant */
+.highlight .ni { color: #800080 } /* Name.Entity */
+.highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
+.highlight .nn { color: #555555 } /* Name.Namespace */
+.highlight .nt { color: #000080 } /* Name.Tag */
+.highlight .nv { color: #008080 } /* Name.Variable */
+.highlight .ow { font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #009999 } /* Literal.Number.Float */
+.highlight .mh { color: #009999 } /* Literal.Number.Hex */
+.highlight .mi { color: #009999 } /* Literal.Number.Integer */
+.highlight .mo { color: #009999 } /* Literal.Number.Oct */
+.highlight .sb { color: #d14 } /* Literal.String.Backtick */
+.highlight .sc { color: #d14 } /* Literal.String.Char */
+.highlight .sd { color: #d14 } /* Literal.String.Doc */
+.highlight .s2 { color: #d14 } /* Literal.String.Double */
+.highlight .se { color: #d14 } /* Literal.String.Escape */
+.highlight .sh { color: #d14 } /* Literal.String.Heredoc */
+.highlight .si { color: #d14 } /* Literal.String.Interpol */
+.highlight .sx { color: #d14 } /* Literal.String.Other */
+.highlight .sr { color: #009926 } /* Literal.String.Regex */
+.highlight .s1 { color: #d14 } /* Literal.String.Single */
+.highlight .ss { color: #990073 } /* Literal.String.Symbol */
+.highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #008080 } /* Name.Variable.Class */
+.highlight .vg { color: #008080 } /* Name.Variable.Global */
+.highlight .vi { color: #008080 } /* Name.Variable.Instance */
+.highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+.pl-c {
+    color: #969896;
+}
+
+.pl-c1,.pl-mdh,.pl-mm,.pl-mp,.pl-mr,.pl-s1 .pl-v,.pl-s3,.pl-sc,.pl-sv {
+    color: #0086b3;
+}
+
+.pl-e,.pl-en {
+    color: #795da3;
+}
+
+.pl-s1 .pl-s2,.pl-smi,.pl-smp,.pl-stj,.pl-vo,.pl-vpf {
+    color: #333;
+}
+
+.pl-ent {
+    color: #63a35c;
+}
+
+.pl-k,.pl-s,.pl-st {
+    color: #a71d5d;
+}
+
+.pl-pds,.pl-s1,.pl-s1 .pl-pse .pl-s2,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre,.pl-src,.pl-v {
+    color: #df5000;
+}
+
+.pl-id {
+    color: #b52a1d;
+}
+
+.pl-ii {
+    background-color: #b52a1d;
+    color: #f8f8f8;
+}
+
+.pl-sr .pl-cce {
+    color: #63a35c;
+    font-weight: bold;
+}
+
+.pl-ml {
+    color: #693a17;
+}
+
+.pl-mh,.pl-mh .pl-en,.pl-ms {
+    color: #1d3e81;
+    font-weight: bold;
+}
+
+.pl-mq {
+    color: #008080;
+}
+
+.pl-mi {
+    color: #333;
+    font-style: italic;
+}
+
+.pl-mb {
+    color: #333;
+    font-weight: bold;
+}
+
+.pl-md,.pl-mdhf {
+    background-color: #ffecec;
+    color: #bd2c00;
+}
+
+.pl-mdht,.pl-mi1 {
+    background-color: #eaffea;
+    color: #55a532;
+}
+
+.pl-mdr {
+    color: #795da3;
+    font-weight: bold;
+}
+
+.pl-mo {
+    color: #1d3e81;
+}
+.task-list {
+padding-left:10px;
+margin-bottom:0;
+}
+
+.task-list li {
+    margin-left: 20px;
+}
+
+.task-list-item {
+list-style-type:none;
+padding-left:10px;
+}
+
+.task-list-item label {
+font-weight:400;
+}
+
+.task-list-item.enabled label {
+cursor:pointer;
+}
+
+.task-list-item+.task-list-item {
+margin-top:3px;
+}
+
+.task-list-item-checkbox {
+display:inline-block;
+margin-left:-20px;
+margin-right:3px;
+vertical-align:1px;
+}
+</style>
+</head>
+<body>
+<p><a name="HOLTitle"></a></p>
+<h1>Xamarin Challenge Part 1</h1>
+<hr>
+<p><a name="Overview"></a></p>
+<h2>Overview</h2>
+<p>One of the key challenges in developing mobile applications for multiple devices and platforms is the divergent set of tools, languages, and resources required to develop and maintain features and functionality across a variety of programming languages, APIs, and user-interface paradigms.</p>
+<p><a href="https://www.xamarin.com/">Xamarin</a> offers one solution to the problem by allowing apps to be written in C# for iOS, Android, and Windows using a common API based on Microsoft .NET. Xamarin apps are built with native user interface controls. Apps look and act the way a user expects for a given device and platform. Xamarin apps also have access to the full spectrum of functionality exposed by the underlying operating system and device and are compiled into native binaries for performance.</p>
+<p><a href="https://www.xamarin.com/forms">Xamarin Forms</a> is a framework included with Xamarin that allows developers to create cross-platform user interfaces by defining those interfaces in XAML. Controls and UI elements declared in XAML render native controls for the host platform, so iOS users see iOS controls and Android users see Android controls. Whereas classic Xamarin apps share code but not UI, Xamarin Forms apps share code <em>and</em> UI and are frequently able to share 95% of their source code across platforms.</p>
+<p><a href="https://www.visualstudio.com/vs/">Visual Studio 2017</a> provides seamless support for Xamarin and Xamarin Forms so you can build cutting-edge mobile apps for a variety of platforms using a single set of tools and APIs. In this challenge, you will use Visual Studio 2017 to create a Xamarin Forms weather application that pulls data from a live weather service and displays current weather conditions for cities around the world. In subsequent challenges, you will build upon what you created here to expand the app's features and capabilities.</p>
+<p><a name="Objectives"></a></p>
+<h3>Objectives</h3>
+<p>In this challenge, you will learn how to:</p>
+<ul>
+<li>Create a Xamarin Forms solution targeting Android, iOS, and Windows</li>
+<li>Add native image and package assets to Xamarin Forms projects</li>
+<li>Add common logic written in C# to Xamarin Forms projects</li>
+<li>Build XAML user interfaces for Xamarin Forms projects</li>
+</ul>
+<p>Your feedback is important. If you run into issues while working the exercises in this challenge, please contact us at <a href="mailto:xamarinchallengehelp@microsoft.com">xamarinchallengehelp@microsoft.com</a>.</p>
+<p><a name="Prerequisites"></a></p>
+<h3>Prerequisites</h3>
+<p>The following are required to complete this challenge:</p>
+<ul>
+<li><a href="https://www.visualstudio.com/vs/">Visual Studio Community 2017</a> or higher</li>
+<li>Windows 10</li>
+</ul>
+<p>If you wish to build and run the iOS version of the challenge app, you also have to have a Mac running OS X 10.11 or higher, and both the Mac and the PC running Visual Studio 2017 require further configuration. For details, see <a href="https://developer.xamarin.com/guides/ios/getting_started/installation/windows/">https://developer.xamarin.com/guides/ios/getting_started/installation/windows/</a>.</p>
+<blockquote>
+<p>Having a Mac and connecting it to Visual Studio is <strong>only required</strong> if you wish to build and run the iOS version of the app. You can run the Android and Windows versions of the app without any further configuration.</p>
+</blockquote>
+<hr>
+<p><a name="Exercises"></a></p>
+<h2>Exercises</h2>
+<p>This challenge includes the following exercises:</p>
+<ul>
+<li><a href="#Exercise1">Exercise 1: Configure Visual Studio 2017 for Xamarin Development</a></li>
+<li><a href="#Exercise2">Exercise 2: Create a Xamarin Forms solution targeting Android, iOS, and Windows</a></li>
+<li><a href="#Exercise3">Exercise 3: Add image and package assets</a></li>
+<li><a href="#Exercise4">Exercise 4: Add common logic to the Portable project</a></li>
+<li><a href="#Exercise5">Exercise 5: Add a responsive user interface</a></li>
+<li><a href="#Exercise6">Exercise 6: Test the app</a></li>
+</ul>
+<p>Estimated time to complete this challenge: <strong>45</strong> minutes.</p>
+<p><a name="Exercise1"></a></p>
+<h2>Exercise 1: Configure Visual Studio 2017 for Xamarin Development</h2>
+<p>If Visual Studio 2017 is already installed on your computer, it's important to make sure it is configured with the proper components and workloads to support Xamarin development. If it <em>isn't</em> installed, then you need to install it with the proper workloads. You can install the Community edition, which is free, or any other edition that you would like. The Community edition and other editions of Visual Studio 2017 can be downloaded from <a href="https://www.visualstudio.com/vs/">https://www.visualstudio.com/vs/</a>.</p>
+<p>If Visual Studio is already installed, you can determine which components and workloads are installed by starting the Visual Studio installer. (An easy way to do that is to press the Windows key, type "installer," and select <strong>Visual Studio Installer</strong> from the menu. You can then click the <strong>Modify</strong> button to view a list of installed components.) If you are installing Visual Studio for the first time, the same UI allows you to select the component and workloads to installed. Here is what must be installed for you to complete this challenge and subsequent challenges.</p>
+<ol>
+<li>
+<p>Under "Workloads" in the Visual Studio installer, make sure <strong>Universal Windows Platform development</strong> and <strong>.NET desktop development</strong> are checked.</p>
+<p><a href="Images/workload-1.png" target="_blank"><img src="Images/workload-1.png" alt="Installing the UWP and .NET development workloads" style="max-width:100%;"></a></p>
+<p><em>Installing the UWP and .NET development workloads</em></p>
+</li>
+<li>
+<p>Under "Workloads" in the Visual Studio installer, make sure <strong>Mobile development with .NET</strong> is checked.</p>
+<p><a href="Images/workload-2.png" target="_blank"><img src="Images/workload-2.png" alt="Installing the mobile development workload" style="max-width:100%;"></a></p>
+<p><em>Installing the mobile development workload</em></p>
+</li>
+<li>
+<p>Under "Individual Components" in the Visual Studio installer, make sure <strong>Visual Studio Emulator for Android</strong> and <strong>Windows 10 Mobile Emulator (Anniversary Edition)</strong> are checked.</p>
+<p><a href="Images/workload-3.png" target="_blank"><img src="Images/workload-3.png" alt="Installing emulators" style="max-width:100%;"></a></p>
+<p><em>Installing emulators</em></p>
+</li>
+</ol>
+<p>Once these workloads and components are installed, you can begin creating Xamarin Forms apps.</p>
+<p><a name="Exercise2"></a></p>
+<h2>Exercise 2: Create a Xamarin Forms solution targeting Android, iOS, and Windows</h2>
+<p>The first step in creating a cross-platform solution with Xamarin Forms is to provision a solution based on the Visual Studio 2017 Cross Platform App template. In this exercise, you will create a new Xamarin Forms solution using this template.</p>
+<ol>
+<li>
+<p>Start Visual Studio 2017. Then click <strong>File</strong> &gt; <strong>New</strong> &gt; <strong>Project</strong> and create a new Cross Platform App solution named "CoolBreeze."</p>
+<p><a href="Images/vs-new-project.png" target="_blank"><img src="Images/vs-new-project.png" alt="Creating a new Cross Platform App solution" style="max-width:100%;"></a></p>
+<p><em>Creating a new Cross Platform App solution</em></p>
+</li>
+<li>
+<p>In the "New Cross Platform App" dialog, select the <strong>Blank App</strong> template. Make sure <strong>Xamarin.Forms</strong> is selected under "UI Technology" and select <strong>Portable Class Library (PCL)</strong> as the "Code Sharing Strategy." Then click <strong>OK</strong>.</p>
+<p><a href="Images/vs-select-blank-app.png" target="_blank"><img src="Images/vs-select-blank-app.png" alt="Specifying Cross Platform App preferences" style="max-width:100%;"></a></p>
+<p><em>Specifying Cross Platform App preferences</em></p>
+</li>
+<li>
+<p>When prompted to choose platform requirements for the Universal Windows Platform project, accept the defaults and click <strong>OK</strong>.</p>
+<p><a href="Images/vs-target-platform.png" target="_blank"><img src="Images/vs-target-platform.png" alt="Specifying UWP platform versions" style="max-width:100%;"></a></p>
+<p><em>Specifying UWP platform versions</em></p>
+</li>
+<li>
+<p>Confirm that the solution appears in Solution Explorer and that it contains four projects:</p>
+<ul>
+<li><strong>CoolBreeze (Portable)</strong> - Contains shared logic for your  Xamarin Forms app</li>
+<li><strong>CoolBreeze.Android</strong> - Contains assets, resources, and logic specific to Android</li>
+<li><strong>CoolBreeze.iOS</strong> - Contains assets, resources, and logic specific to iOS</li>
+<li><strong>CoolBreeze.UWP (Universal Windows)</strong> - Contains assets, resources, and logic specific to the Universal Windows Platform (UWP)</li>
+</ul>
+<p><a href="Images/vs-projects-created.png" target="_blank"><img src="Images/vs-projects-created.png" alt="The generated solution" style="max-width:100%;"></a></p>
+<p><em>The generated solution</em></p>
+</li>
+<li>
+<p>Right-click the <strong>CoolBreeze.Android</strong> project in Solution Explorer and select <strong>Properties</strong> from the context menu. Then click <strong>Android Options</strong> and uncheck the <strong>Use Fast Deployment (debug mode only)</strong> box. This option, if enabled, sometimes causes problems with Android emulators in Hyper-V.</p>
+<p><a href="Images/disable-fast-deployment.png" target="_blank"><img src="Images/disable-fast-deployment.png" alt="Disabling fast deployment on Android" style="max-width:100%;"></a></p>
+<p><em>Disabling fast deployment on Android</em></p>
+</li>
+<li>
+<p>In Solution Explorer, right-click the <strong>CoolBreeze</strong> solution and select <strong>Build Solution</strong> to build the solution. Confirm that the solution builds without errors.</p>
+<p><a href="Images/vs-rebuild-solution.png" target="_blank"><img src="Images/vs-rebuild-solution.png" alt="Building the CoolBreeze solution" style="max-width:100%;"></a></p>
+<p><em>Building the CoolBreeze solution</em></p>
+</li>
+</ol>
+<p>Your Xamarin Forms solution has now been provisioned and configured, and you're ready to start adding platform-specific image and package assets to the projects.</p>
+<p><a name="Exercise3"></a></p>
+<h2>Exercise 3: Add image and package assets</h2>
+<p>The next step in building your Xamarin Forms app is to add shared and platform-specific images and other assets to the individual projects based on recommended standards for each platform. Each mobile platform requires images and assets to be located and configured in a specific way. In this exercise, you will add images and assets to the Portable, Android, iOS and Windows projects.</p>
+<ol>
+<li>
+<p>In Solution Explorer, right-click the <strong>CoolBreeze (Portable)</strong> project and use the <strong>Add</strong> &gt; <strong>New Folder</strong> command to add a folder named "Images" to the project. Confirm that the "Images" folder appears in Solution Explorer in the <strong>CoolBreeze (Portable)</strong> project.</p>
+<p><a href="Images/vs-new-images-folder.png" target="_blank"><img src="Images/vs-new-images-folder.png" alt="The new Images folder" style="max-width:100%;"></a></p>
+<p><em>The new Images folder</em></p>
+</li>
+<li>
+<p>Right-click the "Images" folder and select <strong>Add</strong> &gt; <strong>Existing Item...</strong>. Then browse to the "Resources\Portable\Images" folder in the zip file containing this challenge.</p>
+<p><a href="Images/vs-select-existing-item.png" target="_blank"><img src="Images/vs-select-existing-item.png" alt="Adding images to the PCL project" style="max-width:100%;"></a></p>
+<p><em>Adding images to the PCL project</em></p>
+</li>
+<li>
+<p>Select all of the files in the zip file's "Resources\Portable\Images" folder, and then click <strong>Add</strong>.</p>
+<p><a href="Images/fe-pcl-add-all-images.png" target="_blank"><img src="Images/fe-pcl-add-all-images.png" alt="Adding images to the PCL project" style="max-width:100%;"></a></p>
+<p><em>Adding images to the PCL project</em></p>
+</li>
+<li>
+<p>In Solution Explorer, expand the "Images" folder to view all of the images that you added. Select all of those images. Then go to the "Properties" pane and change the "Build Action" from <strong>Content</strong> to <strong>Embedded Resource</strong>. These images will now be accessible on all platforms.</p>
+<p><a href="Images/vs-change-to-resource.png" target="_blank"><img src="Images/vs-change-to-resource.png" alt="Updating the build action" style="max-width:100%;"></a></p>
+<p><em>Updating the build action</em></p>
+</li>
+<li>
+<p>In Solution Explorer, expand the <strong>CoolBreeze.Android</strong> project to view Android-specific assets and resources.</p>
+<p><a href="Images/vs-droid-project.png" target="_blank"><img src="Images/vs-droid-project.png" alt="Expanding the Android project" style="max-width:100%;"></a></p>
+<p><em>Expanding the Android project</em></p>
+</li>
+<li>
+<p>Open a Windows File Explorer window and navigate to the "Resources\Droid\Resources" folder in the zip file containing this challenge. Copy all of the subfolders in the "Resources\Droid\Resources" folder to the clipboard. Then return to Solution Explorer, right-click the "Resources" folder in the <strong>CoolBreeze.Android</strong> project, and select <strong>Paste</strong> to paste the contents of the clipboard into the project.</p>
+</li>
+<li>
+<p>In the subsequent "Merge Folders" dialog, check <strong>Apply to all items</strong> and then click <strong>Yes</strong>.</p>
+<p><a href="Images/vs-accept-merge.png" target="_blank"><img src="Images/vs-accept-merge.png" alt="Merging folders" style="max-width:100%;"></a></p>
+<p><em>Merging  folders</em></p>
+</li>
+<li>
+<p>In the "Destination File Exists" dialog, again check <strong>Apply to all items</strong> and then click <strong>Yes</strong>. This will update your Android images and assets with appropriately branded assets for your app.</p>
+<p><a href="Images/vs-accept-overwrite-01.png" target="_blank"><img src="Images/vs-accept-overwrite-01.png" alt="Overwriting existing resources" style="max-width:100%;"></a></p>
+<p><em>Overwriting existing resources</em></p>
+</li>
+<li>
+<p>In Solution Explorer, expand the <strong>CoolBreeze.iOS</strong> project to view iOS-specific assets and resources.</p>
+<p><a href="Images/vs-ios-project.png" target="_blank"><img src="Images/vs-ios-project.png" alt="Expanding the iOS project" style="max-width:100%;"></a></p>
+<p><em>Expanding the iOS project</em></p>
+</li>
+<li>
+<p>Right-click the project's "Resources" folder and select <strong>Add</strong> &gt; <strong>Existing Item...</strong>. Then browse to the "Resources\iOS\Resources" folder in the zip file containing this challenge, select all of the files in the folder, and click <strong>Add</strong>.</p>
+<p><a href="Images/fe-selecting-ios-resources.png" target="_blank"><img src="Images/fe-selecting-ios-resources.png" alt="Adding images to the iOS project" style="max-width:100%;"></a></p>
+<p><em>Adding images to the iOS project</em></p>
+</li>
+<li>
+<p>In the "Destination File Exists" dialog, check <strong>Apply to all items</strong> and then click <strong>Yes</strong>. This will update your iOS images and assets with appropriately branded assets for your app.</p>
+<p><a href="Images/vs-accept-overwrite-02.png" target="_blank"><img src="Images/vs-accept-overwrite-02.png" alt="Overwriting existing resources" style="max-width:100%;"></a></p>
+<p><em>Overwriting existing resources</em></p>
+</li>
+<li>
+<p>In Solution Explorer, expand the <strong>CoolBreeze.UWP (Windows Universal)</strong> project to view Windows-specific assets and resources.</p>
+<p><a href="Images/vs-uwp-project.png" target="_blank"><img src="Images/vs-uwp-project.png" alt="Expanding the UWP project" style="max-width:100%;"></a></p>
+<p><em>Expanding the UWP project</em></p>
+</li>
+<li>
+<p>Right-click the project's "Assets" folder and select <strong>Add</strong> &gt; <strong>Existing Item...</strong>. Then browse to the "Resources\UWP\Assets" folder in the zip file containing this challenge, select all of the files in the folder, and click <strong>Add</strong>.</p>
+<p><a href="Images/fe-selecting-uwp-resources.png" target="_blank"><img src="Images/fe-selecting-uwp-resources.png" alt="Adding images to the Windows project" style="max-width:100%;"></a></p>
+<p><em>Adding images to the Windows project</em></p>
+</li>
+<li>
+<p>In Solution Explorer, right-click <strong>Package.appxmanifest</strong> in the UWP project and select <strong>View Code</strong>.</p>
+<p><a href="Images/vs-selecting-appmanifest.png" target="_blank"><img src="Images/vs-selecting-appmanifest.png" alt="Opening the UWP package manifest" style="max-width:100%;"></a></p>
+<p><em>Opening the UWP package manifest</em></p>
+</li>
+<li>
+<p>Locate the <code>Properties</code> element in the XML file. Select that element and all of the statements that follow it.</p>
+<p><a href="Images/vs-package-manifest.png" target="_blank"><img src="Images/vs-package-manifest.png" alt="Selecting statements in the package manifest" style="max-width:100%;"></a></p>
+<p><em>Selecting statements in the package manifest</em></p>
+</li>
+<li>
+<p>Replace the statements you selected with the following XML to update the manifest file to reference the updated assets.</p>
+<div class="highlight highlight-text-xml"><pre>  &lt;<span class="pl-ent">Properties</span>&gt;
+    &lt;<span class="pl-ent">DisplayName</span>&gt;CoolBreeze&lt;/<span class="pl-ent">DisplayName</span>&gt;
+    &lt;<span class="pl-ent">PublisherDisplayName</span>&gt;Xamarin Developer&lt;/<span class="pl-ent">PublisherDisplayName</span>&gt;
+    &lt;<span class="pl-ent">Logo</span>&gt;Assets\CoolBreeze_50x50.png&lt;/<span class="pl-ent">Logo</span>&gt;
+  &lt;/<span class="pl-ent">Properties</span>&gt;
+  &lt;<span class="pl-ent">Dependencies</span>&gt;
+    &lt;<span class="pl-ent">TargetDeviceFamily</span> <span class="pl-e">Name</span>=<span class="pl-s"><span class="pl-pds">"</span>Windows.Universal<span class="pl-pds">"</span></span> <span class="pl-e">MinVersion</span>=<span class="pl-s"><span class="pl-pds">"</span>10.0.0.0<span class="pl-pds">"</span></span> <span class="pl-e">MaxVersionTested</span>=<span class="pl-s"><span class="pl-pds">"</span>10.0.0.0<span class="pl-pds">"</span></span> /&gt;
+  &lt;/<span class="pl-ent">Dependencies</span>&gt;
+  &lt;<span class="pl-ent">Resources</span>&gt;
+    &lt;<span class="pl-ent">Resource</span> <span class="pl-e">Language</span>=<span class="pl-s"><span class="pl-pds">"</span>x-generate<span class="pl-pds">"</span></span> /&gt;
+  &lt;/<span class="pl-ent">Resources</span>&gt;
+  &lt;<span class="pl-ent">Applications</span>&gt;
+    &lt;<span class="pl-ent">Application</span> <span class="pl-e">Id</span>=<span class="pl-s"><span class="pl-pds">"</span>App<span class="pl-pds">"</span></span> <span class="pl-e">Executable</span>=<span class="pl-s"><span class="pl-pds">"</span>$targetnametoken$.exe<span class="pl-pds">"</span></span> <span class="pl-e">EntryPoint</span>=<span class="pl-s"><span class="pl-pds">"</span>CoolBreeze.UWP.App<span class="pl-pds">"</span></span>&gt;
+      &lt;<span class="pl-ent">uap</span><span class="pl-ent">:</span><span class="pl-ent">VisualElements</span> <span class="pl-e">DisplayName</span>=<span class="pl-s"><span class="pl-pds">"</span>CoolBreeze<span class="pl-pds">"</span></span> <span class="pl-e">Square150x150Logo</span>=<span class="pl-s"><span class="pl-pds">"</span>Assets\CoolBreeze_150x150.png<span class="pl-pds">"</span></span> <span class="pl-e">Square44x44Logo</span>=<span class="pl-s"><span class="pl-pds">"</span>Assets\CoolBreeze_44x44.png<span class="pl-pds">"</span></span> <span class="pl-e">Description</span>=<span class="pl-s"><span class="pl-pds">"</span>CoolBreeze.UWP<span class="pl-pds">"</span></span> <span class="pl-e">BackgroundColor</span>=<span class="pl-s"><span class="pl-pds">"</span>#003366<span class="pl-pds">"</span></span>&gt;
+        &lt;<span class="pl-ent">uap</span><span class="pl-ent">:</span><span class="pl-ent">DefaultTile</span> <span class="pl-e">Wide310x150Logo</span>=<span class="pl-s"><span class="pl-pds">"</span>Assets\CoolBreeze_310x150.png<span class="pl-pds">"</span></span> <span class="pl-e">Square310x310Logo</span>=<span class="pl-s"><span class="pl-pds">"</span>Assets\CoolBreeze_310x310.png<span class="pl-pds">"</span></span> <span class="pl-e">Square71x71Logo</span>=<span class="pl-s"><span class="pl-pds">"</span>Assets\CoolBreeze_71x71.png<span class="pl-pds">"</span></span>&gt;
+        &lt;/<span class="pl-ent">uap</span><span class="pl-ent">:</span><span class="pl-ent">DefaultTile</span>&gt;
+        &lt;<span class="pl-ent">uap</span><span class="pl-ent">:</span><span class="pl-ent">SplashScreen</span> <span class="pl-e">Image</span>=<span class="pl-s"><span class="pl-pds">"</span>Assets\CoolBreeze_splash.png<span class="pl-pds">"</span></span> <span class="pl-e">BackgroundColor</span>=<span class="pl-s"><span class="pl-pds">"</span>#003366<span class="pl-pds">"</span></span> /&gt;
+      &lt;/<span class="pl-ent">uap</span><span class="pl-ent">:</span><span class="pl-ent">VisualElements</span>&gt;
+    &lt;/<span class="pl-ent">Application</span>&gt;
+  &lt;/<span class="pl-ent">Applications</span>&gt;
+  &lt;<span class="pl-ent">Capabilities</span>&gt;
+    &lt;<span class="pl-ent">Capability</span> <span class="pl-e">Name</span>=<span class="pl-s"><span class="pl-pds">"</span>internetClient<span class="pl-pds">"</span></span> /&gt;
+    &lt;<span class="pl-ent">DeviceCapability</span> <span class="pl-e">Name</span>=<span class="pl-s"><span class="pl-pds">"</span>location<span class="pl-pds">"</span></span> /&gt;
+  &lt;/<span class="pl-ent">Capabilities</span>&gt;
+&lt;/<span class="pl-ent">Package</span>&gt;</pre></div>
+</li>
+<li>
+<p>Now it's time to run the app for the first time. Let's start with the Android version of the app. Ensure that the Android project is selected as the startup project by right-clicking the <strong>CoolBreeze.Android</strong> project in Solution Explorer and selecting <strong>Set as StartUp Project</strong>.</p>
+<p><a href="Images/vs-set-as-startup.png" target="_blank"><img src="Images/vs-set-as-startup.png" alt="Making the Android project the startup project" style="max-width:100%;"></a></p>
+<p><em>Making the Android project the startup project</em></p>
+</li>
+<li>
+<p>Click the <strong>Run</strong> button (the one with the green arrow) at the top of Visual Studio to launch the Android version of CoolBreeze in the selected Android emulator. Note that the emulator will probably take a minute or two to start.</p>
+<p><a href="Images/run-android.png" target="_blank"><img src="Images/run-android.png" alt="Launching the Android app" style="max-width:100%;"></a></p>
+<p><em>Launching the Android app</em></p>
+</li>
+<li>
+<p>Confirm that the app appears in the Android emulator. Leave the Android emulator running (that will allow the Android app to start quickly next time). Then return to Visual Studio and select <strong>Stop Debugging</strong> from the <strong>Debug</strong> menu to stop debugging.</p>
+<p><a href="Images/app-welcome-screen.png" target="_blank"><img src="Images/app-welcome-screen.png" alt="CoolBreeze on Android" style="max-width:100%;"></a></p>
+<p><em>CoolBreeze on Android</em></p>
+</li>
+<li>
+<p>Open the Settings app on your PC (an easy way to do it is to click the Windows button, type "Settings," and click <strong>Settings</strong>). Then click <strong>Update &amp; security</strong> followed by <strong>For developers</strong>, and select <strong>Developer mode</strong> if it isn't already selected.</p>
+<blockquote>
+<p>If you try to enable developer mode and receive an error, see <a href="https://www.kapilarya.com/developer-mode-package-failed-to-install-error-code-0x80004005-windows-10">https://www.kapilarya.com/developer-mode-package-failed-to-install-error-code-0x80004005-windows-10</a> for a potential fix.</p>
+</blockquote>
+<p><a href="Images/developer-mode.png" target="_blank"><img src="Images/developer-mode.png" alt="Enabling developer mode in Windows 10" style="max-width:100%;"></a></p>
+<p><em>Enabling developer mode in Windows 10</em></p>
+</li>
+<li>
+<p>Make <strong>CoolBreeze.UWP</strong> the startup project by right-clicking it and selecting <strong>Set as StartUp Project</strong>. Then deploy the UWP app to your computer by right-clicking the <strong>CoolBreeze.UWP</strong> project in Solution Explorer and selecting <strong>Deploy</strong>.</p>
+</li>
+<li>
+<p>Click the <strong>Run</strong> button at the top of Visual Studio to launch the UWP version of CoolBreeze on the local machine.</p>
+<blockquote>
+<p>If you would prefer to run the UWP app in a Windows phone emulator rather than on the desktop, simply select the desired emulator from the drop-down list attached to the <strong>Run</strong> button.</p>
+</blockquote>
+<p><a href="Images/run-uwp.png" target="_blank"><img src="Images/run-uwp.png" alt="Launching the UWP app" style="max-width:100%;"></a></p>
+<p><em>Launching the UWP app</em></p>
+</li>
+<li>
+<p>If you configured Visual Studio to build iOS projects, make <strong>CoolBreeze.iOS</strong> the startup project and click the <strong>Run</strong> button to launch it in the iOS simulator.</p>
+<blockquote>
+<p>Remember that you can only build and run the iOS version of the app if you configured a Mac to serve as the build host and connected Visual Studio to the Mac. For more information, see <a href="https://developer.xamarin.com/guides/ios/getting_started/installation/windows/">https://developer.xamarin.com/guides/ios/getting_started/installation/windows/</a>.</p>
+</blockquote>
+</li>
+<li>
+<p>Return to the home screen in each of the emulators you tested. Notice the CoolBreeze icons on the home screens, which come from the platform-specific assets that you added to the projects. When the app launches, notice the custom splash screen, too.</p>
+<p><a href="Images/app-updated-branding.png" target="_blank"><img src="Images/app-updated-branding.png" alt="CoolBreeze branding" style="max-width:100%;"></a></p>
+<p><em>CoolBreeze branding</em></p>
+</li>
+</ol>
+<p>All of the necessary assets have been added to the Xamarin Forms projects. Now it's time to add code to make the app do something useful.</p>
+<p><a name="Exercise4"></a></p>
+<h2>Exercise 4: Add common logic to the Portable project</h2>
+<p>Xamarin Forms supports popular package managers such as NuGet. To simplify the parsing of JSON data, such as data returned from a weather service, CoolBreeze will use the popular open-source package JSON.NET. It will also use the Microsoft HttpClient package to place calls to the weather service. In this exercise, you will import these packages and then write code that uses them to retrieve weather data.</p>
+<ol>
+<li>
+<p>In Solution Explorer, expand the <strong>CoolBreeze (Portable)</strong> project. Then right-click <strong>References</strong> and select <strong>Manage NuGet Packages...</strong> from the context menu.</p>
+<p><a href="Images/vs-manage-nuget-02.png" target="_blank"><img src="Images/vs-manage-nuget-02.png" alt="Managing NuGet packages" style="max-width:100%;"></a></p>
+<p><em>Managing NuGet packages</em></p>
+</li>
+<li>
+<p>Click <strong>Browse</strong> in the NuGet Package Manager. Then select the <strong>Newtonsoft.Json</strong> package and click <strong>Install</strong> to install the latest stable version. If prompted to review changes, click <strong>OK</strong>.</p>
+<p><a href="Images/vs-install-json-net.png" target="_blank"><img src="Images/vs-install-json-net.png" alt="Installing JSON.NET" style="max-width:100%;"></a></p>
+<p><em>Installing JSON.NET</em></p>
+</li>
+<li>
+<p>Still in the NuGet Package Manager, type "HttpClient" into the search box, and then select <strong>Microsoft.Net.Http</strong> in the results list. Ensure that the latest stable version of the package is selected, and then click <strong>Install</strong>. If prompted to review changes, click <strong>OK</strong>. If prompted to accept a license, click <strong>I Accept</strong>.</p>
+<p><a href="Images/vs-install-http-net.png" target="_blank"><img src="Images/vs-install-http-net.png" alt="Installing Microsoft.Net.Http" style="max-width:100%;"></a></p>
+<p><em>Installing Microsoft.Net.Http</em></p>
+</li>
+<li>
+<p>In Solution Explorer, right-click the <strong>CoolBreeze (Portable)</strong> project and use the <strong>Add</strong> &gt; <strong>New Folder</strong> command to add a folder named "Common." Then repeat this step to add folders named "Helpers," "Models," and "ViewModels" to the project.</p>
+</li>
+<li>
+<p>Right-click the "Common" folder that you just added and use the <strong>Add</strong> &gt; <strong>Existing Item...</strong> command to add all the files in the "Resources\Portable\Common" folder in the zip file containing this challenge to the project's "Common" folder. These files facilitate commanding and property-binding notifications for the user interface.</p>
+</li>
+<li>
+<p>Right-click the "Models" folder and use the <strong>Add</strong> &gt; <strong>Class</strong> command to add a class file named "WeatherInformation.cs" to the folder. Then replace the contents of the file with the following code. This class serves as the data model for weather information displayed by your app.</p>
+<div class="highlight highlight-source-cs"><pre><span class="pl-k">using</span> <span class="pl-en">CoolBreeze.Common</span>;
+<span class="pl-k">using</span> <span class="pl-en">System</span>;
+<span class="pl-k">using</span> <span class="pl-en">System.Collections.Generic</span>;
+<span class="pl-k">using</span> <span class="pl-en">System.Linq</span>;
+<span class="pl-k">using</span> <span class="pl-en">System.Text</span>;
+<span class="pl-k">using</span> <span class="pl-en">System.Threading.Tasks</span>;
+
+<span class="pl-k">namespace</span> <span class="pl-en">CoolBreeze</span>
+{
+    <span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">WeatherInformation</span> : <span class="pl-en">ObservableBase</span>
+    {
+        <span class="pl-k">private </span><span class="pl-k">int</span> <span class="pl-en">_id</span>;
+        <span class="pl-k">public </span><span class="pl-k">int</span> <span class="pl-en">Id</span>
+        {
+            <span class="pl-k">get</span> { <span class="pl-k">return</span> <span class="pl-c1">this</span>._id; }
+            <span class="pl-k">set</span> { <span class="pl-c1">this</span>.SetProperty(ref <span class="pl-c1">this</span>._id, <span class="pl-k">value</span>); }
+        }
+
+        <span class="pl-k">private </span><span class="pl-k">string</span> <span class="pl-en">_displayName</span>;
+        <span class="pl-k">public </span><span class="pl-k">string</span> <span class="pl-en">DisplayName</span>
+        {
+            <span class="pl-k">get</span> { <span class="pl-k">return</span> <span class="pl-c1">this</span>._displayName; }
+            <span class="pl-k">set</span> { <span class="pl-c1">this</span>.SetProperty(ref <span class="pl-c1">this</span>._displayName, <span class="pl-k">value</span>); }
+        }
+
+        <span class="pl-k">private </span><span class="pl-k">int</span> <span class="pl-en">_temperature</span>;
+        <span class="pl-k">public </span><span class="pl-k">int</span> <span class="pl-en">Temperature</span>
+        {
+            <span class="pl-k">get</span> { <span class="pl-k">return</span> <span class="pl-c1">this</span>._temperature; }
+            <span class="pl-k">set</span> { <span class="pl-c1">this</span>.SetProperty(ref <span class="pl-c1">this</span>._temperature, <span class="pl-k">value</span>); }
+        }
+
+        <span class="pl-k">private </span><span class="pl-k">int</span> <span class="pl-en">_humidity</span>;
+        <span class="pl-k">public </span><span class="pl-k">int</span> <span class="pl-en">Humidity</span>
+        {
+            <span class="pl-k">get</span> { <span class="pl-k">return</span> <span class="pl-c1">this</span>._humidity; }
+            <span class="pl-k">set</span> { <span class="pl-c1">this</span>.SetProperty(ref <span class="pl-c1">this</span>._humidity, <span class="pl-k">value</span>); }
+        }
+
+        <span class="pl-k">private </span><span class="pl-k">int</span> <span class="pl-en">_minTemperature</span>;
+        <span class="pl-k">public </span><span class="pl-k">int</span> <span class="pl-en">MinTemperature</span>
+        {
+            <span class="pl-k">get</span> { <span class="pl-k">return</span> <span class="pl-c1">this</span>._minTemperature; }
+            <span class="pl-k">set</span> { <span class="pl-c1">this</span>.SetProperty(ref <span class="pl-c1">this</span>._minTemperature, <span class="pl-k">value</span>); }
+        }
+
+        <span class="pl-k">private </span><span class="pl-k">int</span> <span class="pl-en">_maxTemperature</span>;
+        <span class="pl-k">public </span><span class="pl-k">int</span> <span class="pl-en">MaxTemperature</span>
+        {
+            <span class="pl-k">get</span> { <span class="pl-k">return</span> <span class="pl-c1">this</span>._maxTemperature; }
+            <span class="pl-k">set</span> { <span class="pl-c1">this</span>.SetProperty(ref <span class="pl-c1">this</span>._maxTemperature, <span class="pl-k">value</span>); }
+        }
+
+        <span class="pl-k">private </span><span class="pl-k">string</span> <span class="pl-en">_conditions</span>;
+        <span class="pl-k">public </span><span class="pl-k">string</span> <span class="pl-en">Conditions</span>
+        {
+            <span class="pl-k">get</span> { <span class="pl-k">return</span> <span class="pl-c1">this</span>._conditions; }
+            <span class="pl-k">set</span> { <span class="pl-c1">this</span>.SetProperty(ref <span class="pl-c1">this</span>._conditions, <span class="pl-k">value</span>); }
+        }
+
+        <span class="pl-k">private </span><span class="pl-k">string</span> <span class="pl-en">_description</span>;
+        <span class="pl-k">public </span><span class="pl-k">string</span> <span class="pl-en">Description</span>
+        {
+            <span class="pl-k">get</span> { <span class="pl-k">return</span> <span class="pl-c1">this</span>._description; }
+            <span class="pl-k">set</span> { <span class="pl-c1">this</span>.SetProperty(ref <span class="pl-c1">this</span>._description, <span class="pl-k">value</span>); }
+        }
+
+        <span class="pl-k">private </span><span class="pl-k">string</span> <span class="pl-en">_icon</span>;
+        <span class="pl-k">public </span><span class="pl-k">string</span> <span class="pl-en">Icon</span>
+        {
+            <span class="pl-k">get</span> { <span class="pl-k">return</span> <span class="pl-c1">this</span>._icon; }
+            <span class="pl-k">set</span> { <span class="pl-c1">this</span>.SetProperty(ref <span class="pl-c1">this</span>._icon, <span class="pl-k">value</span>); }
+        }
+
+        <span class="pl-k">private </span><span class="pl-en">DateTime</span> <span class="pl-en">_timeStamp</span>;
+        <span class="pl-k">public </span><span class="pl-en">DateTime</span> <span class="pl-en">TimeStamp</span>
+        {
+            <span class="pl-k">get</span> { <span class="pl-k">return</span> <span class="pl-c1">this</span>._timeStamp; }
+            <span class="pl-k">set</span> { <span class="pl-c1">this</span>.SetProperty(ref <span class="pl-c1">this</span>._timeStamp, <span class="pl-k">value</span>); }
+        }
+    }
+}</pre></div>
+</li>
+<li>
+<p>Right-click the "Helpers" folder and use the <strong>Add</strong> &gt; <strong>Class</strong> command to add a class file named "WeatherHelper.cs." Then replace the contents of the file with the following code. This class facilitates calling an Azure API service to retrieve weather information.</p>
+<div class="highlight highlight-source-cs"><pre><span class="pl-k">using</span> <span class="pl-en">System</span>;
+<span class="pl-k">using</span> <span class="pl-en">System.Collections.Generic</span>;
+<span class="pl-k">using</span> <span class="pl-en">System.Linq</span>;
+<span class="pl-k">using</span> <span class="pl-en">System.Net.Http</span>;
+<span class="pl-k">using</span> <span class="pl-en">System.Text</span>;
+<span class="pl-k">using</span> <span class="pl-en">System.Threading.Tasks</span>;
+
+<span class="pl-k">namespace</span> <span class="pl-en">CoolBreeze.Helpers</span>
+{
+    <span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">WeatherHelper</span>
+    {
+    	<span class="pl-k">public</span> <span class="pl-k">async</span> <span class="pl-k">static</span> <span class="pl-en">Task</span>&lt;<span class="pl-en">WeatherInformation</span>&gt; <span class="pl-en">GetCurrentConditionsAsync</span>(<span class="pl-k">string</span> <span class="pl-smi">cityName</span>, <span class="pl-k">string</span> <span class="pl-smi">countryCode</span>)
+        {
+            <span class="pl-k">string</span> <span class="pl-en">url</span> = <span class="pl-pds">$"</span><span class="pl-s">http://traininglabservices.azurewebsites.net/api/weather/current/city?cityName=</span>{cityName}<span class="pl-s">&amp;countryCode=</span>{countryCode}<span class="pl-s">&amp;registrationCode=</span>{App.RegistrationCode}<span class="pl-pds">"</span>;
+            <span class="pl-en">HttpClient</span> <span class="pl-en">client</span> = <span class="pl-k">new</span> <span class="pl-en">HttpClient</span>();
+            <span class="pl-k">var</span> <span class="pl-en">response </span>= <span class="pl-k">await</span> client.GetStringAsync(url);
+            <span class="pl-k">var</span> <span class="pl-en">result </span>= Newtonsoft.Json.JsonConvert.DeserializeObject&lt;WeatherInformation&gt;(<span class="pl-en">response</span>);
+            <span class="pl-k">return</span> result;
+        }
+    }
+}</pre></div>
+</li>
+<li>
+<p>Right-click the "ViewModels" folder and use the <strong>Add</strong> &gt; <strong>Class</strong> command to add a class file named "MainViewModel.cs." Then replace the contents of the file with the following code. The purpose of this class is to provide a view-model containing weather data that can update UI elements through data binding.</p>
+<div class="highlight highlight-source-cs"><pre><span class="pl-k">using</span> <span class="pl-en">CoolBreeze.Common</span>;
+<span class="pl-k">using</span> <span class="pl-en">System</span>;
+<span class="pl-k">using</span> <span class="pl-en">System.Collections.Generic</span>;
+<span class="pl-k">using</span> <span class="pl-en">System.Collections.ObjectModel</span>;
+<span class="pl-k">using</span> <span class="pl-en">System.Linq</span>;
+<span class="pl-k">using</span> <span class="pl-en">System.Text</span>;
+<span class="pl-k">using</span> <span class="pl-en">System.Threading.Tasks</span>;
+
+<span class="pl-k">namespace</span> <span class="pl-en">CoolBreeze</span>
+{
+    <span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">MainViewModel</span> : <span class="pl-en">ObservableBase</span>
+    {
+        <span class="pl-k">public</span> <span class="pl-en">MainViewModel</span>()
+        {
+            <span class="pl-c1">this</span>.IsBusy = <span class="pl-c1">true</span>;
+            <span class="pl-c1">this</span>.NeedsRefresh = <span class="pl-c1">true</span>;
+            <span class="pl-c1">this</span>.LocationType = LocationType.City;
+            <span class="pl-c1">this</span>.CityName = <span class="pl-s"><span class="pl-pds">"</span>Amsterdam<span class="pl-pds">"</span></span>;
+            <span class="pl-c1">this</span>.CountryCode = <span class="pl-s"><span class="pl-pds">"</span>HL<span class="pl-pds">"</span></span>;
+            <span class="pl-c1">this</span>.CurrentConditions = <span class="pl-k">new</span> <span class="pl-en">WeatherInformation</span>();
+        }
+
+        <span class="pl-k">private </span><span class="pl-en">LocationType</span> <span class="pl-en">_locationType</span>;
+        <span class="pl-k">public </span><span class="pl-en">LocationType</span> <span class="pl-en">LocationType</span>
+        {
+            <span class="pl-k">get</span> { <span class="pl-k">return</span> <span class="pl-c1">this</span>._locationType; }
+            <span class="pl-k">set</span> { <span class="pl-c1">this</span>.SetProperty(ref <span class="pl-c1">this</span>._locationType, <span class="pl-k">value</span>); }
+        }
+                
+        <span class="pl-k">private </span><span class="pl-k">string</span> <span class="pl-en">_postalCode</span>;
+        <span class="pl-k">public </span><span class="pl-k">string</span> <span class="pl-en">PostalCode</span>
+        {
+            <span class="pl-k">get</span> { <span class="pl-k">return</span> <span class="pl-c1">this</span>._postalCode; }
+            <span class="pl-k">set</span> { <span class="pl-c1">this</span>.SetProperty(ref <span class="pl-c1">this</span>._postalCode, <span class="pl-k">value</span>); }
+        }
+
+        <span class="pl-k">private </span><span class="pl-k">string</span> <span class="pl-en">_cityName</span>;
+        <span class="pl-k">public </span><span class="pl-k">string</span> <span class="pl-en">CityName</span>
+        {
+            <span class="pl-k">get</span> { <span class="pl-k">return</span> <span class="pl-c1">this</span>._cityName; }
+            <span class="pl-k">set</span> { <span class="pl-c1">this</span>.SetProperty(ref <span class="pl-c1">this</span>._cityName, <span class="pl-k">value</span>); }
+        }
+
+        <span class="pl-k">private </span><span class="pl-k">string</span> <span class="pl-en">_countryCode</span>;
+        <span class="pl-k">public </span><span class="pl-k">string</span> <span class="pl-en">CountryCode</span>
+        {
+            <span class="pl-k">get</span> { <span class="pl-k">return</span> <span class="pl-c1">this</span>._countryCode; }
+            <span class="pl-k">set</span> { <span class="pl-c1">this</span>.SetProperty(ref <span class="pl-c1">this</span>._countryCode, <span class="pl-k">value</span>); }
+        }
+
+        <span class="pl-k">private </span><span class="pl-en">WeatherInformation</span> <span class="pl-en">_currentConditions</span>;
+        <span class="pl-k">public </span><span class="pl-en">WeatherInformation</span> <span class="pl-en">CurrentConditions</span>
+        {
+            <span class="pl-k">get</span> { <span class="pl-k">return</span> <span class="pl-c1">this</span>._currentConditions; }
+            <span class="pl-k">set</span> { <span class="pl-c1">this</span>.SetProperty(ref <span class="pl-c1">this</span>._currentConditions, <span class="pl-k">value</span>); }
+        } 
+
+        <span class="pl-k">private </span><span class="pl-k">bool</span> <span class="pl-en">_needsRefresh</span>;
+        <span class="pl-k">public </span><span class="pl-k">bool</span> <span class="pl-en">NeedsRefresh</span>
+        {
+            <span class="pl-k">get</span> { <span class="pl-k">return</span> <span class="pl-c1">this</span>._needsRefresh || <span class="pl-k">string</span>.IsNullOrEmpty(<span class="pl-c1">this</span>._currentConditions.Conditions); }
+            <span class="pl-k">set</span> { <span class="pl-c1">this</span>.SetProperty(ref <span class="pl-c1">this</span>._needsRefresh, <span class="pl-k">value</span>); }
+        }
+        
+        <span class="pl-k">private </span><span class="pl-k">bool</span> <span class="pl-en">_isBusy</span>;
+        <span class="pl-k">public </span><span class="pl-k">bool</span> <span class="pl-en">IsBusy</span>
+        {
+            <span class="pl-k">get</span> { <span class="pl-k">return</span> <span class="pl-c1">this</span>._isBusy; }
+            <span class="pl-k">set</span> { <span class="pl-c1">this</span>.SetProperty(ref <span class="pl-c1">this</span>._isBusy, <span class="pl-k">value</span>); }
+        }
+
+        <span class="pl-k">public</span> <span class="pl-k">async</span> <span class="pl-k">void</span> <span class="pl-en">RefreshCurrentConditionsAsync</span>()
+        {
+            <span class="pl-c1">this</span>.IsBusy = <span class="pl-c1">true</span>;
+            <span class="pl-c1">this</span>.NeedsRefresh = <span class="pl-c1">false</span>;
+
+            <span class="pl-en">WeatherInformation</span> <span class="pl-en">results</span> = <span class="pl-k">await</span> Helpers.WeatherHelper.GetCurrentConditionsAsync(<span class="pl-c1">this</span>.CityName, <span class="pl-c1">this</span>.CountryCode); 
+            
+            <span class="pl-c1">this</span>.CurrentConditions.Conditions = results.Conditions;
+            <span class="pl-c1">this</span>.CurrentConditions.Description = results.Description;
+            <span class="pl-c1">this</span>.CurrentConditions.DisplayName = results.DisplayName;
+            <span class="pl-c1">this</span>.CurrentConditions.Icon = results.Icon;
+            <span class="pl-c1">this</span>.CurrentConditions.Id = results.Id;
+            <span class="pl-c1">this</span>.CurrentConditions.MaxTemperature = results.MaxTemperature;
+            <span class="pl-c1">this</span>.CurrentConditions.MinTemperature = results.MinTemperature;
+            <span class="pl-c1">this</span>.CurrentConditions.Temperature = results.Temperature;
+            <span class="pl-c1">this</span>.CurrentConditions.Humidity = results.Humidity;
+            <span class="pl-c1">this</span>.CurrentConditions.TimeStamp = results.TimeStamp.ToLocalTime();
+
+            <span class="pl-c1">this</span>.IsBusy = <span class="pl-c1">false</span>;
+        }
+    }
+}</pre></div>
+</li>
+</ol>
+<p>The PCL project now contains shared logic to support a rich user experience. The next step is to create a user experience that utilizes the logic.</p>
+<p><a name="Exercise5"></a></p>
+<h2>Exercise 5: Add a responsive user interface</h2>
+<p>In previous exercises, you created a solid foundation for a great cross-platform mobile experience with virtually 100% shared code, organized in a way that is easily maintained and extended. In this exercise, you will add a user interface to show off all your hard work.</p>
+<ol>
+<li>
+<p>In Solution Explorer, double-click the <strong>App.xaml</strong> file in the <strong>CoolBreeze (Portable)</strong> project to open it for editing.</p>
+<p><a href="Images/vs-pcl-app-file.png" target="_blank"><img src="Images/vs-pcl-app-file.png" alt="Opening App.xaml" style="max-width:100%;"></a></p>
+<p><em>Opening App.xaml</em></p>
+</li>
+<li>
+<p>Replace the contents of <strong>App.xaml</strong> with the following XAML:</p>
+<div class="highlight highlight-text-xml"><pre>&lt;?<span class="pl-ent">xml</span><span class="pl-e"> version</span>=<span class="pl-s"><span class="pl-pds">"</span>1.0<span class="pl-pds">"</span></span><span class="pl-e"> encoding</span>=<span class="pl-s"><span class="pl-pds">"</span>utf-8<span class="pl-pds">"</span></span> ?&gt;
+&lt;<span class="pl-ent">Application</span> <span class="pl-e">xmlns</span>=<span class="pl-s"><span class="pl-pds">"</span>http://xamarin.com/schemas/2014/forms<span class="pl-pds">"</span></span>
+             <span class="pl-e">xmlns</span><span class="pl-e">:</span><span class="pl-e">x</span>=<span class="pl-s"><span class="pl-pds">"</span>http://schemas.microsoft.com/winfx/2009/xaml<span class="pl-pds">"</span></span>
+             <span class="pl-e">xmlns</span><span class="pl-e">:</span><span class="pl-e">common</span>=<span class="pl-s"><span class="pl-pds">"</span>clr-namespace:CoolBreeze.Common;assembly=CoolBreeze<span class="pl-pds">"</span></span> 
+             <span class="pl-e">x</span><span class="pl-e">:</span><span class="pl-e">Class</span>=<span class="pl-s"><span class="pl-pds">"</span>CoolBreeze.App<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">Application</span>.Resources&gt;
+        &lt;<span class="pl-ent">ResourceDictionary</span>&gt;
+
+            &lt;<span class="pl-ent">common</span><span class="pl-ent">:</span><span class="pl-ent">IconToUrlConverter</span>  <span class="pl-e">x</span><span class="pl-e">:</span><span class="pl-e">Key</span>=<span class="pl-s"><span class="pl-pds">"</span>IconToUrlConverter<span class="pl-pds">"</span></span>/&gt;
+            &lt;<span class="pl-ent">common</span><span class="pl-ent">:</span><span class="pl-ent">BooleanToFalseConverter</span>  <span class="pl-e">x</span><span class="pl-e">:</span><span class="pl-e">Key</span>=<span class="pl-s"><span class="pl-pds">"</span>BooleanToFalseConverter<span class="pl-pds">"</span></span>/&gt;
+            &lt;<span class="pl-ent">common</span><span class="pl-ent">:</span><span class="pl-ent">ZeroToPlaceholderConverter</span>  <span class="pl-e">x</span><span class="pl-e">:</span><span class="pl-e">Key</span>=<span class="pl-s"><span class="pl-pds">"</span>ZeroToPlaceholderConverter<span class="pl-pds">"</span></span>/&gt;
+            &lt;<span class="pl-ent">common</span><span class="pl-ent">:</span><span class="pl-ent">UpdatedLabelConverter</span>  <span class="pl-e">x</span><span class="pl-e">:</span><span class="pl-e">Key</span>=<span class="pl-s"><span class="pl-pds">"</span>UpdatedLabelConverter<span class="pl-pds">"</span></span>/&gt;
+            &lt;<span class="pl-ent">common</span><span class="pl-ent">:</span><span class="pl-ent">ForecastTimeLabelConverter</span>  <span class="pl-e">x</span><span class="pl-e">:</span><span class="pl-e">Key</span>=<span class="pl-s"><span class="pl-pds">"</span>ForecastTimeLabelConverter<span class="pl-pds">"</span></span>/&gt;
+            &lt;<span class="pl-ent">common</span><span class="pl-ent">:</span><span class="pl-ent">CharacterLabelConverter</span>  <span class="pl-e">x</span><span class="pl-e">:</span><span class="pl-e">Key</span>=<span class="pl-s"><span class="pl-pds">"</span>CharacterLabelConverter<span class="pl-pds">"</span></span>/&gt;
+
+            &lt;<span class="pl-ent">Color</span> <span class="pl-e">x</span><span class="pl-e">:</span><span class="pl-e">Key</span>=<span class="pl-s"><span class="pl-pds">"</span>AppBaseColor<span class="pl-pds">"</span></span>&gt;#003366&lt;/<span class="pl-ent">Color</span>&gt;
+            &lt;<span class="pl-ent">Color</span> <span class="pl-e">x</span><span class="pl-e">:</span><span class="pl-e">Key</span>=<span class="pl-s"><span class="pl-pds">"</span>AppAccentColor<span class="pl-pds">"</span></span>&gt;#00BFFF&lt;/<span class="pl-ent">Color</span>&gt;
+
+        &lt;/<span class="pl-ent">ResourceDictionary</span>&gt;
+    &lt;/<span class="pl-ent">Application</span>.Resources&gt;
+&lt;/<span class="pl-ent">Application</span>&gt;</pre></div>
+</li>
+<li>
+<p>Expand the <strong>App.xaml</strong> node and double-click <strong>App.xaml.cs</strong>.</p>
+<p><a href="Images/vs-pcl-app-cs.png" target="_blank"><img src="Images/vs-pcl-app-cs.png" alt="Opening App.xaml.cs" style="max-width:100%;"></a></p>
+<p><em>Opening App.xaml.cs</em></p>
+</li>
+<li>
+<p>Enter the following statements directly above the <code>App</code> constructor:</p>
+<div class="highlight highlight-source-cs"><pre><span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-en">MainViewModel</span> <span class="pl-en">ViewModel</span>;
+<span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-k">string</span> <span class="pl-en">RegistrationCode</span> = <span class="pl-s"><span class="pl-pds">"</span>&lt;YOUR CHALLENGE REGISTRATION CODE&gt;<span class="pl-pds">"</span></span>;</pre></div>
+<p><a href="Images/vs-updated-app-cs.png" target="_blank"><img src="Images/vs-updated-app-cs.png" alt="Updating App.xaml.cs" style="max-width:100%;"></a></p>
+<p><em>Updating App.xaml.cs</em></p>
+</li>
+<li>
+<p>Still in <strong>App.xaml.cs</strong>, replace "&lt;YOUR CHALLENGE REGISTRATION CODE&gt;" with the <strong>registration code you received when you registered for the Xamarin Challenge</strong>.</p>
+<blockquote>
+<p>The registration code contains a mix of letters and numbers and is 32 characters long. It uniquely identifies you and is required for being eligible for prizes when the Xamarin Challenge ends.</p>
+</blockquote>
+</li>
+<li>
+<p>Notice the statement in the <code>App</code> constructor that sets the app's <code>MainPage</code> property to an instance of <code>CoolBreeze.MainPage</code>. This makes the <code>MainPage</code> class the one that renders the user interface when the app is started. Your next task is to replace the placeholder XAML in that file with XAML defining the app's user interface. To begin, go to Solution Explorer and double-click <strong>MainPage.xaml</strong>.</p>
+<p><a href="Images/vs-mainpage-file.png" target="_blank"><img src="Images/vs-mainpage-file.png" alt="Opening MainPage.xaml" style="max-width:100%;"></a></p>
+<p><em>Opening MainPage.xaml</em></p>
+</li>
+<li>
+<p>Replace the contents of <strong>MainPage.xaml</strong> with the following XAML:</p>
+<div class="highlight highlight-text-xml"><pre>&lt;?<span class="pl-ent">xml</span><span class="pl-e"> version</span>=<span class="pl-s"><span class="pl-pds">"</span>1.0<span class="pl-pds">"</span></span><span class="pl-e"> encoding</span>=<span class="pl-s"><span class="pl-pds">"</span>utf-8<span class="pl-pds">"</span></span> ?&gt;
+&lt;<span class="pl-ent">ContentPage</span> <span class="pl-e">xmlns</span>=<span class="pl-s"><span class="pl-pds">"</span>http://xamarin.com/schemas/2014/forms<span class="pl-pds">"</span></span>
+             <span class="pl-e">xmlns</span><span class="pl-e">:</span><span class="pl-e">x</span>=<span class="pl-s"><span class="pl-pds">"</span>http://schemas.microsoft.com/winfx/2009/xaml<span class="pl-pds">"</span></span> 
+            <span class="pl-e">Title</span>=<span class="pl-s"><span class="pl-pds">"</span>Now<span class="pl-pds">"</span></span>
+             <span class="pl-e">x</span><span class="pl-e">:</span><span class="pl-e">Class</span>=<span class="pl-s"><span class="pl-pds">"</span>CoolBreeze.MainPage<span class="pl-pds">"</span></span>&gt;
+
+    &lt;<span class="pl-ent">Grid</span>&gt;
+        &lt;<span class="pl-ent">Grid</span>.RowDefinitions&gt;
+            &lt;<span class="pl-ent">RowDefinition</span> <span class="pl-e">Height</span>=<span class="pl-s"><span class="pl-pds">"</span>Auto<span class="pl-pds">"</span></span>/&gt;
+            &lt;<span class="pl-ent">RowDefinition</span> <span class="pl-e">Height</span>=<span class="pl-s"><span class="pl-pds">"</span>Auto<span class="pl-pds">"</span></span>/&gt;
+            &lt;<span class="pl-ent">RowDefinition</span> <span class="pl-e">Height</span>=<span class="pl-s"><span class="pl-pds">"</span>Auto<span class="pl-pds">"</span></span>/&gt;
+            &lt;<span class="pl-ent">RowDefinition</span> <span class="pl-e">Height</span>=<span class="pl-s"><span class="pl-pds">"</span>Auto<span class="pl-pds">"</span></span>/&gt;
+            &lt;<span class="pl-ent">RowDefinition</span> <span class="pl-e">Height</span>=<span class="pl-s"><span class="pl-pds">"</span>Auto<span class="pl-pds">"</span></span>/&gt;
+        &lt;/<span class="pl-ent">Grid</span>.RowDefinitions&gt;
+       
+        &lt;<span class="pl-ent">Picker</span> <span class="pl-e">Margin</span>=<span class="pl-s"><span class="pl-pds">"</span>0,60,0,20<span class="pl-pds">"</span></span> <span class="pl-e">HorizontalOptions</span>=<span class="pl-s"><span class="pl-pds">"</span>Center<span class="pl-pds">"</span></span> <span class="pl-e">VerticalOptions</span>=<span class="pl-s"><span class="pl-pds">"</span>Start<span class="pl-pds">"</span></span> <span class="pl-e">Title</span>=<span class="pl-s"><span class="pl-pds">"</span>Select a city<span class="pl-pds">"</span></span> <span class="pl-e">x</span><span class="pl-e">:</span><span class="pl-e">Name</span>=<span class="pl-s"><span class="pl-pds">"</span>cityPicker<span class="pl-pds">"</span></span> <span class="pl-e">SelectedIndexChanged</span>=<span class="pl-s"><span class="pl-pds">"</span>SelectedCityChanged<span class="pl-pds">"</span></span> <span class="pl-e">WidthRequest</span>=<span class="pl-s"><span class="pl-pds">"</span>300<span class="pl-pds">"</span></span>&gt;
+            &lt;<span class="pl-ent">Picker</span>.Items&gt;
+                &lt;<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;Amsterdam (NL)&lt;/<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;
+                &lt;<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;Atlanta (US)&lt;/<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;
+                &lt;<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;Buenos Aires (AR)&lt;/<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;
+                &lt;<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;Cairo (EG)&lt;/<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;
+                &lt;<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;Calgary (CA)&lt;/<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;
+                &lt;<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;Chicago (US)&lt;/<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;
+                &lt;<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;Dallas (US)&lt;/<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;
+                &lt;<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;Havana (CU)&lt;/<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;
+                &lt;<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;Houston (US)&lt;/<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;
+                &lt;<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;Las Vegas (US)&lt;/<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;
+                &lt;<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;London (GB)&lt;/<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;
+                &lt;<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;Los Angeles (US)&lt;/<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;
+                &lt;<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;Manhattan (US)&lt;/<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;
+                &lt;<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;San Diego (US)&lt;/<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;
+                &lt;<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;Seattle (US)&lt;/<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;
+
+            &lt;/<span class="pl-ent">Picker</span>.Items&gt;
+        &lt;/<span class="pl-ent">Picker</span>&gt;
+
+         
+        &lt;<span class="pl-ent">StackLayout</span> Grid.Row=<span class="pl-s"><span class="pl-pds">"</span>1<span class="pl-pds">"</span></span> <span class="pl-e">BindingContext</span>=<span class="pl-s"><span class="pl-pds">"</span>{Binding}<span class="pl-pds">"</span></span> <span class="pl-e">HorizontalOptions</span>=<span class="pl-s"><span class="pl-pds">"</span>Center<span class="pl-pds">"</span></span> <span class="pl-e">VerticalOptions</span>=<span class="pl-s"><span class="pl-pds">"</span>Start<span class="pl-pds">"</span></span> <span class="pl-e">Orientation</span>=<span class="pl-s"><span class="pl-pds">"</span>Horizontal<span class="pl-pds">"</span></span>&gt;
+            &lt;<span class="pl-ent">Image</span> <span class="pl-e">VerticalOptions</span>=<span class="pl-s"><span class="pl-pds">"</span>Center<span class="pl-pds">"</span></span> <span class="pl-e">HorizontalOptions</span>=<span class="pl-s"><span class="pl-pds">"</span>End<span class="pl-pds">"</span></span> <span class="pl-e">Aspect</span>=<span class="pl-s"><span class="pl-pds">"</span>Fill<span class="pl-pds">"</span></span> <span class="pl-e">HeightRequest</span>=<span class="pl-s"><span class="pl-pds">"</span>100<span class="pl-pds">"</span></span> <span class="pl-e">WidthRequest</span>=<span class="pl-s"><span class="pl-pds">"</span>100<span class="pl-pds">"</span></span> <span class="pl-e">Source</span>=<span class="pl-s"><span class="pl-pds">"</span>{Binding CurrentConditions.Icon, Converter={StaticResource IconToUrlConverter}}<span class="pl-pds">"</span></span> /&gt;
+            &lt;<span class="pl-ent">Label</span> <span class="pl-e">Text</span>=<span class="pl-s"><span class="pl-pds">"</span>{Binding CurrentConditions.Temperature, Converter={StaticResource ZeroToPlaceholderConverter}}<span class="pl-pds">"</span></span> <span class="pl-e">HorizontalOptions</span>=<span class="pl-s"><span class="pl-pds">"</span>Start<span class="pl-pds">"</span></span> <span class="pl-e">VerticalOptions</span>=<span class="pl-s"><span class="pl-pds">"</span>Center<span class="pl-pds">"</span></span> <span class="pl-e">FontSize</span>=<span class="pl-s"><span class="pl-pds">"</span>64<span class="pl-pds">"</span></span>/&gt;
+            &lt;<span class="pl-ent">Label</span> <span class="pl-e">Text</span>=<span class="pl-s"><span class="pl-pds">"</span>°<span class="pl-pds">"</span></span> <span class="pl-e">FontSize</span>=<span class="pl-s"><span class="pl-pds">"</span>64<span class="pl-pds">"</span></span>/&gt;
+            &lt;<span class="pl-ent">Label</span> <span class="pl-e">Text</span>=<span class="pl-s"><span class="pl-pds">"</span>F<span class="pl-pds">"</span></span> <span class="pl-e">VerticalOptions</span>=<span class="pl-s"><span class="pl-pds">"</span>Center<span class="pl-pds">"</span></span> <span class="pl-e">FontSize</span>=<span class="pl-s"><span class="pl-pds">"</span>22<span class="pl-pds">"</span></span>/&gt;
+        &lt;/<span class="pl-ent">StackLayout</span>&gt;
+
+        &lt;<span class="pl-ent">StackLayout</span> Grid.Row=<span class="pl-s"><span class="pl-pds">"</span>2<span class="pl-pds">"</span></span> <span class="pl-e">Orientation</span>=<span class="pl-s"><span class="pl-pds">"</span>Horizontal<span class="pl-pds">"</span></span> <span class="pl-e">HorizontalOptions</span>=<span class="pl-s"><span class="pl-pds">"</span>Center<span class="pl-pds">"</span></span> <span class="pl-e">VerticalOptions</span>=<span class="pl-s"><span class="pl-pds">"</span>Start<span class="pl-pds">"</span></span>&gt;
+            &lt;<span class="pl-ent">Label</span> <span class="pl-e">Text</span>=<span class="pl-s"><span class="pl-pds">"</span>{Binding CurrentConditions.MaxTemperature, Converter={StaticResource CharacterLabelConverter}, ConverterParameter=°}<span class="pl-pds">"</span></span> <span class="pl-e">HorizontalOptions</span>=<span class="pl-s"><span class="pl-pds">"</span>Start<span class="pl-pds">"</span></span> <span class="pl-e">VerticalOptions</span>=<span class="pl-s"><span class="pl-pds">"</span>Center<span class="pl-pds">"</span></span> <span class="pl-e">FontSize</span>=<span class="pl-s"><span class="pl-pds">"</span>Large<span class="pl-pds">"</span></span>/&gt;
+            &lt;<span class="pl-ent">Label</span> <span class="pl-e">Margin</span>=<span class="pl-s"><span class="pl-pds">"</span>5,0,0,0<span class="pl-pds">"</span></span> <span class="pl-e">Text</span>=<span class="pl-s"><span class="pl-pds">"</span>{Binding CurrentConditions.MinTemperature, Converter={StaticResource CharacterLabelConverter}, ConverterParameter=°}<span class="pl-pds">"</span></span> <span class="pl-e">HorizontalOptions</span>=<span class="pl-s"><span class="pl-pds">"</span>Start<span class="pl-pds">"</span></span> <span class="pl-e">VerticalOptions</span>=<span class="pl-s"><span class="pl-pds">"</span>Center<span class="pl-pds">"</span></span> <span class="pl-e">FontSize</span>=<span class="pl-s"><span class="pl-pds">"</span>Small<span class="pl-pds">"</span></span>/&gt;
+        &lt;/<span class="pl-ent">StackLayout</span>&gt;
+
+        &lt;<span class="pl-ent">Label</span> Grid.Row=<span class="pl-s"><span class="pl-pds">"</span>3<span class="pl-pds">"</span></span> <span class="pl-e">FontAttributes</span>=<span class="pl-s"><span class="pl-pds">"</span>Bold<span class="pl-pds">"</span></span> <span class="pl-e">Text</span>=<span class="pl-s"><span class="pl-pds">"</span>{Binding CurrentConditions.Conditions}<span class="pl-pds">"</span></span> <span class="pl-e">HorizontalOptions</span>=<span class="pl-s"><span class="pl-pds">"</span>Center<span class="pl-pds">"</span></span> <span class="pl-e">VerticalOptions</span>=<span class="pl-s"><span class="pl-pds">"</span>Start<span class="pl-pds">"</span></span> <span class="pl-e">FontSize</span>=<span class="pl-s"><span class="pl-pds">"</span>Medium<span class="pl-pds">"</span></span>/&gt;
+        &lt;<span class="pl-ent">Label</span> Grid.Row=<span class="pl-s"><span class="pl-pds">"</span>4<span class="pl-pds">"</span></span>  <span class="pl-e">Text</span>=<span class="pl-s"><span class="pl-pds">"</span>{Binding CurrentConditions.TimeStamp, Converter={StaticResource UpdatedLabelConverter}}<span class="pl-pds">"</span></span> <span class="pl-e">HorizontalOptions</span>=<span class="pl-s"><span class="pl-pds">"</span>Center<span class="pl-pds">"</span></span> <span class="pl-e">VerticalOptions</span>=<span class="pl-s"><span class="pl-pds">"</span>Start<span class="pl-pds">"</span></span> <span class="pl-e">FontSize</span>=<span class="pl-s"><span class="pl-pds">"</span>Micro<span class="pl-pds">"</span></span>/&gt;
+
+        &lt;<span class="pl-ent">ActivityIndicator</span> <span class="pl-e">Color</span>=<span class="pl-s"><span class="pl-pds">"</span>{StaticResource AppAccentColor}<span class="pl-pds">"</span></span> <span class="pl-e">VerticalOptions</span>=<span class="pl-s"><span class="pl-pds">"</span>Center<span class="pl-pds">"</span></span> <span class="pl-e">HorizontalOptions</span>=<span class="pl-s"><span class="pl-pds">"</span>Center<span class="pl-pds">"</span></span> Grid.RowSpan=<span class="pl-s"><span class="pl-pds">"</span>5<span class="pl-pds">"</span></span> <span class="pl-e">IsRunning</span>=<span class="pl-s"><span class="pl-pds">"</span>{Binding IsBusy}<span class="pl-pds">"</span></span> <span class="pl-e">IsEnabled</span>=<span class="pl-s"><span class="pl-pds">"</span>{Binding IsBusy}<span class="pl-pds">"</span></span> <span class="pl-e">IsVisible</span>=<span class="pl-s"><span class="pl-pds">"</span>{Binding IsBusy}<span class="pl-pds">"</span></span>&gt;
+            &lt;<span class="pl-ent">ActivityIndicator</span>.WidthRequest&gt;
+                &lt;<span class="pl-ent">OnPlatform</span> <span class="pl-e">x</span><span class="pl-e">:</span><span class="pl-e">TypeArguments</span>=<span class="pl-s"><span class="pl-pds">"</span>x:Double<span class="pl-pds">"</span></span> <span class="pl-e">iOS</span>=<span class="pl-s"><span class="pl-pds">"</span>100<span class="pl-pds">"</span></span> <span class="pl-e">Android</span>=<span class="pl-s"><span class="pl-pds">"</span>100<span class="pl-pds">"</span></span> <span class="pl-e">WinPhone</span>=<span class="pl-s"><span class="pl-pds">"</span>400<span class="pl-pds">"</span></span> /&gt;
+            &lt;/<span class="pl-ent">ActivityIndicator</span>.WidthRequest&gt;
+        &lt;/<span class="pl-ent">ActivityIndicator</span>&gt;
+
+    &lt;/<span class="pl-ent">Grid</span>&gt;
+
+&lt;/<span class="pl-ent">ContentPage</span>&gt;</pre></div>
+</li>
+<li>
+<p>Expand the <strong>MainPage.xaml</strong> node and double-click <strong>MainPage.xaml.cs</strong>.</p>
+<p><a href="Images/vs-mainpage-cs.png" target="_blank"><img src="Images/vs-mainpage-cs.png" alt="Opening MainPage.xaml.cs" style="max-width:100%;"></a></p>
+<p><em>Opening MainPage.xaml.cs</em></p>
+</li>
+<li>
+<p>Replace the contents of <strong>MainPage.xaml.cs</strong> with the following code:</p>
+<div class="highlight highlight-source-cs"><pre><span class="pl-k">using</span> <span class="pl-en">System</span>;
+<span class="pl-k">using</span> <span class="pl-en">System.Collections.Generic</span>;
+<span class="pl-k">using</span> <span class="pl-en">System.Linq</span>;
+<span class="pl-k">using</span> <span class="pl-en">System.Text</span>;
+<span class="pl-k">using</span> <span class="pl-en">System.Threading.Tasks</span>;
+
+<span class="pl-k">using</span> <span class="pl-en">Xamarin.Forms</span>;
+
+<span class="pl-k">namespace</span> <span class="pl-en">CoolBreeze</span>
+{
+    <span class="pl-k">public</span> <span class="pl-k">partial</span> <span class="pl-k">class</span> <span class="pl-en">MainPage</span> : <span class="pl-en">ContentPage</span>
+    {
+        <span class="pl-k">public</span> <span class="pl-en">MainPage</span>()
+        {
+            InitializeComponent();
+        }
+
+        <span class="pl-k">protected</span> <span class="pl-k">override</span> <span class="pl-k">void</span> <span class="pl-en">OnAppearing</span>()
+        {
+            <span class="pl-k">if</span> (App.ViewModel == <span class="pl-c1">null</span>) App.ViewModel = <span class="pl-k">new</span> <span class="pl-en">MainViewModel</span>();
+
+            <span class="pl-c1">this</span>.BindingContext = App.ViewModel;
+
+            <span class="pl-k">if</span> (App.ViewModel.NeedsRefresh) App.ViewModel.RefreshCurrentConditionsAsync();
+
+            <span class="pl-k">if</span> (cityPicker.SelectedIndex &lt; <span class="pl-c1">0</span>) cityPicker.SelectedIndex = <span class="pl-c1">0</span>;
+
+            <span class="pl-c1">base</span>.OnAppearing();
+        }
+
+        <span class="pl-k">private</span> <span class="pl-k">void</span> <span class="pl-en">SelectedCityChanged</span>(<span class="pl-k">object</span> <span class="pl-smi">sender</span>, <span class="pl-en">EventArgs</span> <span class="pl-smi">e</span>)
+        {
+            <span class="pl-k">if</span> (!App.ViewModel.IsBusy)
+            {
+                App.ViewModel.NeedsRefresh = <span class="pl-c1">true</span>;
+                App.ViewModel.LocationType = Common.LocationType.City;
+
+                <span class="pl-k">string</span> <span class="pl-en">selectedItem</span> = (sender <span class="pl-k">as</span> <span class="pl-en">Picker</span>).Items[(sender <span class="pl-k">as</span> <span class="pl-en">Picker</span>).SelectedIndex];
+
+                <span class="pl-k">var</span> <span class="pl-en">cityName </span>= selectedItem.Split(<span class="pl-s"><span class="pl-pds">'</span>(<span class="pl-pds">'</span></span>).First().Trim();
+                <span class="pl-k">var</span> <span class="pl-en">countryCode </span>= selectedItem.Split(<span class="pl-s"><span class="pl-pds">'</span>(<span class="pl-pds">'</span></span>).Last().Replace(<span class="pl-s"><span class="pl-pds">"</span>)<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>).Trim();
+
+                App.ViewModel.CityName = cityName;
+                App.ViewModel.CountryCode = countryCode;
+
+                App.ViewModel.RefreshCurrentConditionsAsync();
+            }
+        }
+    }
+}</pre></div>
+</li>
+</ol>
+<p>Almost there! The final step is to run CoolBreeze and see what it looks like on various devices.</p>
+<p><a name="Exercise6"></a></p>
+<h2>Exercise 6: Test the app</h2>
+<p>In this exercise, you will run the CoolBreeze app and use it to view real-time weather information in various cities.</p>
+<ol>
+<li>
+<p>Ensure that the Android project is selected as the startup project by right-clicking it in Solution Explorer and selecting <strong>Set as StartUp Project</strong>. Then launch the app in the Android emulator.</p>
+<p><a href="Images/run-android.png" target="_blank"><img src="Images/run-android.png" alt="Launching the Android version of CoolBreeze" style="max-width:100%;"></a></p>
+<p><em>Launching the Android version of CoolBreeze</em></p>
+</li>
+<li>
+<p>Confirm that CoolBreeze shows the current weather in Amsterdam. Then tap <strong>Amsterdam (NL)</strong> to display a list of cities.</p>
+<p><a href="Images/vs-final-droid-01.png" target="_blank"><img src="Images/vs-final-droid-01.png" alt="CoolBreeze showing the current weather in Amsterdam" style="max-width:100%;"></a></p>
+<p><em>CoolBreeze showing the current weather in Amsterdam</em></p>
+</li>
+<li>
+<p>Select another city from the list.</p>
+<p><a href="Images/vs-final-droid-02.png" target="_blank"><img src="Images/vs-final-droid-02.png" alt="Selecting a different city" style="max-width:100%;"></a></p>
+<p><em>Selecting a different city</em></p>
+</li>
+<li>
+<p>Confirm that the UI updates to show the current weather in that city.</p>
+<p><a href="Images/vs-final-droid-03.png" target="_blank"><img src="Images/vs-final-droid-03.png" alt="CoolBreeze showing the current weather in Las Vegas" style="max-width:100%;"></a></p>
+<p><em>CoolBreeze showing the current weather in Las Vegas</em></p>
+</li>
+<li>
+<p>Repeat Steps 1 through 4 for the UWP app (and optionally the iOS app) and observe how the user experience differs on other platforms, and yet works exactly the same. Here, for example, is how the app looks on iOS:</p>
+<p><a href="Images/vs-final-ios-01.png" target="_blank"><img src="Images/vs-final-ios-01.png" alt="CoolBreeze on iOS" style="max-width:100%;"></a></p>
+<p><em>CoolBreeze on iOS</em></p>
+</li>
+</ol>
+<p>The app runs on all three platforms, but you wrote no platform-specific code. All the C# and XAML added to the app was added to the PCL project, meaning it is shared across all platforms. Moreover, the app was compiled into native code for all three platforms, so it is virtually indistinguishable from a native iOS, Android, or UWP app.</p>
+<p><a name="Summary"></a></p>
+<h2>Summary</h2>
+<p>That's it for Part 1 of the Xamarin Challenge. In a few days, you'll receive Part 2 and have the opportunity to enhance CoolBreeze with additional features. More soon!</p>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
