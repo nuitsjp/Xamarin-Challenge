@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Xamarin Challenge Part 2</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<style type="text/css">
+.highlight  { background: #ffffff; }
+.highlight .c { color: #999988; font-style: italic } /* Comment */
+.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.highlight .k { font-weight: bold } /* Keyword */
+.highlight .o { font-weight: bold } /* Operator */
+.highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
+.highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
+.highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #aa0000 } /* Generic.Error */
+.highlight .gh { color: #999999 } /* Generic.Heading */
+.highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
+.highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #555555 } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #aaaaaa } /* Generic.Subheading */
+.highlight .gt { color: #aa0000 } /* Generic.Traceback */
+.highlight .kc { font-weight: bold } /* Keyword.Constant */
+.highlight .kd { font-weight: bold } /* Keyword.Declaration */
+.highlight .kp { font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
+.highlight .m { color: #009999 } /* Literal.Number */
+.highlight .s { color: #d14 } /* Literal.String */
+.highlight .na { color: #008080 } /* Name.Attribute */
+.highlight .nb { color: #0086B3 } /* Name.Builtin */
+.highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
+.highlight .no { color: #008080 } /* Name.Constant */
+.highlight .ni { color: #800080 } /* Name.Entity */
+.highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
+.highlight .nn { color: #555555 } /* Name.Namespace */
+.highlight .nt { color: #000080 } /* Name.Tag */
+.highlight .nv { color: #008080 } /* Name.Variable */
+.highlight .ow { font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #009999 } /* Literal.Number.Float */
+.highlight .mh { color: #009999 } /* Literal.Number.Hex */
+.highlight .mi { color: #009999 } /* Literal.Number.Integer */
+.highlight .mo { color: #009999 } /* Literal.Number.Oct */
+.highlight .sb { color: #d14 } /* Literal.String.Backtick */
+.highlight .sc { color: #d14 } /* Literal.String.Char */
+.highlight .sd { color: #d14 } /* Literal.String.Doc */
+.highlight .s2 { color: #d14 } /* Literal.String.Double */
+.highlight .se { color: #d14 } /* Literal.String.Escape */
+.highlight .sh { color: #d14 } /* Literal.String.Heredoc */
+.highlight .si { color: #d14 } /* Literal.String.Interpol */
+.highlight .sx { color: #d14 } /* Literal.String.Other */
+.highlight .sr { color: #009926 } /* Literal.String.Regex */
+.highlight .s1 { color: #d14 } /* Literal.String.Single */
+.highlight .ss { color: #990073 } /* Literal.String.Symbol */
+.highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #008080 } /* Name.Variable.Class */
+.highlight .vg { color: #008080 } /* Name.Variable.Global */
+.highlight .vi { color: #008080 } /* Name.Variable.Instance */
+.highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+.pl-c {
+    color: #969896;
+}
+
+.pl-c1,.pl-mdh,.pl-mm,.pl-mp,.pl-mr,.pl-s1 .pl-v,.pl-s3,.pl-sc,.pl-sv {
+    color: #0086b3;
+}
+
+.pl-e,.pl-en {
+    color: #795da3;
+}
+
+.pl-s1 .pl-s2,.pl-smi,.pl-smp,.pl-stj,.pl-vo,.pl-vpf {
+    color: #333;
+}
+
+.pl-ent {
+    color: #63a35c;
+}
+
+.pl-k,.pl-s,.pl-st {
+    color: #a71d5d;
+}
+
+.pl-pds,.pl-s1,.pl-s1 .pl-pse .pl-s2,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre,.pl-src,.pl-v {
+    color: #df5000;
+}
+
+.pl-id {
+    color: #b52a1d;
+}
+
+.pl-ii {
+    background-color: #b52a1d;
+    color: #f8f8f8;
+}
+
+.pl-sr .pl-cce {
+    color: #63a35c;
+    font-weight: bold;
+}
+
+.pl-ml {
+    color: #693a17;
+}
+
+.pl-mh,.pl-mh .pl-en,.pl-ms {
+    color: #1d3e81;
+    font-weight: bold;
+}
+
+.pl-mq {
+    color: #008080;
+}
+
+.pl-mi {
+    color: #333;
+    font-style: italic;
+}
+
+.pl-mb {
+    color: #333;
+    font-weight: bold;
+}
+
+.pl-md,.pl-mdhf {
+    background-color: #ffecec;
+    color: #bd2c00;
+}
+
+.pl-mdht,.pl-mi1 {
+    background-color: #eaffea;
+    color: #55a532;
+}
+
+.pl-mdr {
+    color: #795da3;
+    font-weight: bold;
+}
+
+.pl-mo {
+    color: #1d3e81;
+}
+.task-list {
+padding-left:10px;
+margin-bottom:0;
+}
+
+.task-list li {
+    margin-left: 20px;
+}
+
+.task-list-item {
+list-style-type:none;
+padding-left:10px;
+}
+
+.task-list-item label {
+font-weight:400;
+}
+
+.task-list-item.enabled label {
+cursor:pointer;
+}
+
+.task-list-item+.task-list-item {
+margin-top:3px;
+}
+
+.task-list-item-checkbox {
+display:inline-block;
+margin-left:-20px;
+margin-right:3px;
+vertical-align:1px;
+}
+</style>
+</head>
+<body>
+<p><a name="HOLTitle"></a></p>
+<h1>Xamarin Challenge Part 2</h1>
+<hr>
+<p><a name="Overview"></a></p>
+<h2>Overview</h2>
+<p>One of the key challenges in developing mobile applications for multiple devices and platforms is the divergent set of tools, languages, and resources required to develop and maintain features and functionality across a variety of programming languages, APIs, and user-interface paradigms.</p>
+<p><a href="https://www.xamarin.com/">Xamarin</a> offers one solution to the problem by allowing apps to be written in C# for iOS, Android, and Windows using a common API based on Microsoft .NET. Xamarin apps are built with native user interface controls. Apps look and act the way a user expects for a given device and platform. Xamarin apps also have access to the full spectrum of functionality exposed by the underlying operating system and device and are compiled into native binaries for performance.</p>
+<p><a href="https://www.xamarin.com/forms">Xamarin Forms</a> is a framework included with Xamarin that allows developers to create cross-platform user interfaces by defining those interfaces in XAML. Controls and UI elements declared in XAML render native controls for the host platform, so iOS users see iOS controls and Android users see Android controls. Whereas classic Xamarin apps share code but not UI, Xamarin Forms apps share code <em>and</em> UI and are frequently able to share 95% of their source code across platforms.</p>
+<p><a href="https://www.visualstudio.com/vs/">Visual Studio 2017</a> provides seamless support for Xamarin and Xamarin Forms so you can build cutting-edge mobile apps for a variety of platforms using a single set of tools and APIs. In Part 2 of the Xamarin Challenge, you will enhance the CoolBreeze app you built in Part 1 by adding geolocation support so the app can display the weather conditions at your current location. You will also add to the app the ability to display weather forecasts.</p>
+<p><a name="Objectives"></a></p>
+<h3>Objectives</h3>
+<p>In this challenge, you will learn how to:</p>
+<ul>
+<li>Add geolocation support to a Xamarin Forms app</li>
+<li>Add tabbed pages to a Xamarin Forms app</li>
+<li>Add toolbar navigation to a Xamarin Forms app</li>
+</ul>
+<p>Your feedback is important. If you run into issues while working the exercises in this challenge, please contact us at <a href="mailto:xamarinchallengehelp@microsoft.com">xamarinchallengehelp@microsoft.com</a>.</p>
+<p><a name="Prerequisites"></a></p>
+<h3>Prerequisites</h3>
+<p>The following are required to complete this challenge:</p>
+<ul>
+<li>Completion of Xamarin Challenge Part 1</li>
+<li><a href="https://www.visualstudio.com/vs/">Visual Studio Community 2017</a> or higher</li>
+<li>Windows 10</li>
+</ul>
+<p>If you wish to build and run the iOS version of the challenge app, you also have to have a Mac running OS X 10.11 or higher, and both the Mac and the PC running Visual Studio 2017 require further configuration. For details, see <a href="https://developer.xamarin.com/guides/ios/getting_started/installation/windows/">https://developer.xamarin.com/guides/ios/getting_started/installation/windows/</a>.</p>
+<hr>
+<p><a name="Exercises"></a></p>
+<h2>Exercises</h2>
+<p>This challenge includes the following exercises:</p>
+<ul>
+<li><a href="#Exercise1">Exercise 1: Add geolocation support to the app</a></li>
+<li><a href="#Exercise2">Exercise 2: Add a tabbed page to the app</a></li>
+<li><a href="#Exercise3">Exercise 3: Add toolbar navigation to the app</a></li>
+</ul>
+<p>Estimated time to complete this challenge: <strong>30</strong> minutes.</p>
+<p><a name="Exercise1"></a></p>
+<h2>Exercise 1: Add geolocation support to the app</h2>
+<p>Virtually all mobile platforms feature geolocation support, which allows apps to determine the user's current location and even track that location as the user moves. Xamarin doesn't provide a device-independent geolocation API that apps can call upon, but there are free plugins that do. In this exercise, you will import a popular Xamarin plugin that allows any app running on any device to determine the user's location, and then use that plugin to implement a helper method that returns the current location.</p>
+<ol>
+<li>
+<p>Open the <strong>CoolBreeze</strong> solution that you completed in Xamarin Challenge Part 1 in Visual Studio 2017. <strong>If you have not completed Part 1, stop now and complete it before proceeding.</strong></p>
+</li>
+<li>
+<p>In the Solution Explorer, right-click the <strong>CoolBreeze</strong> solution and select <strong>Manage NuGet Packages for Solution...</strong>.</p>
+<p><a href="Images/vs-manage-solution-packages.png" target="_blank"><img src="Images/vs-manage-solution-packages.png" alt="Managing NuGet packages for the solution" style="max-width:100%;"></a></p>
+<p><em>Managing NuGet packages for the solution</em></p>
+</li>
+<li>
+<p>Ensure that "Browse" is selected in the NuGet Package Manager, and type "Xam.Plugin.Geolocator" (without quotation marks) into the search box. Select the <strong>Xam.Plugin.Geolocator</strong> package. Then check the <strong>Project</strong> box to add the package to all of the projects in the solution, and click <strong>Install</strong>. When prompted to review changes, click <strong>OK</strong>.</p>
+<p><a href="Images/vs-install-geolocator.png" target="_blank"><img src="Images/vs-install-geolocator.png" alt="Installing Xam.Plugin.Geolocator" style="max-width:100%;"></a></p>
+<p><em>Installing Xam.Plugin.Geolocator</em></p>
+</li>
+<li>
+<p>Review the <strong>readme.txt</strong> file generated by the package installer, making note of the platform-specific manifest requirements for access to location services.</p>
+<blockquote>
+<p>Although 100% of the code for geolocation in a Xamarin Forms app can be shared across platforms, there are specific permissions that need to be set on a per-platform basis in order for the host operating system to divulge location information. Providing a user's location without permission is considered a violation of privacy.</p>
+</blockquote>
+<p><a href="Images/vs-nuget-readme.png" target="_blank"><img src="Images/vs-nuget-readme.png" alt="The Xam.Plugin.Geolocator read.me file" style="max-width:100%;"></a></p>
+<p><em>The Xam.Plugin.Geolocator readme file</em></p>
+</li>
+<li>
+<p>To enable location services on Android, you need to update the app manifest. Open the <strong>AndroidManifest.xml</strong> file in the <strong>CoolBreeze.Android</strong> project.</p>
+<p><a href="Images/vs-select-android-manifest.png" target="_blank"><img src="Images/vs-select-android-manifest.png" alt="Opening the Android app manifest" style="max-width:100%;"></a></p>
+<p><em>Opening the Android app manifest</em></p>
+</li>
+<li>
+<p>Add the following statements to the end of the file, right before the closing &lt;/manifest&gt; tag:</p>
+<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">uses-permission</span> <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>android.permission.ACCESS_COARSE_LOCATION<span class="pl-pds">"</span></span> /&gt;
+&lt;<span class="pl-ent">uses-permission</span> <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>android.permission.ACCESS_FINE_LOCATION<span class="pl-pds">"</span></span> /&gt;</pre></div>
+<p><a href="Images/vs-updated-android-manifest.png" target="_blank"><img src="Images/vs-updated-android-manifest.png" alt="Updating the Android app manifest" style="max-width:100%;"></a></p>
+<p><em>Updating the Android app manifest</em></p>
+</li>
+<li>
+<p>To enable location services on iOS, you need to update the app's information property list. Open the <strong>Info.plist</strong> file in the <strong>CoolBreeze.iOS</strong> project.</p>
+<p><a href="Images/vs-ios-plist-file.png" target="_blank"><img src="Images/vs-ios-plist-file.png" alt="Opening the iOS information property list" style="max-width:100%;"></a></p>
+<p><em>Opening the iOS information property list</em></p>
+</li>
+<li>
+<p>Scroll to the bottom of the list and click the <strong>+</strong> sign at bottom left to add a new property.</p>
+<p><a href="Images/vs-add-ios-property.png" target="_blank"><img src="Images/vs-add-ios-property.png" alt="Adding a property to Info.plist" style="max-width:100%;"></a></p>
+<p><em>Adding a property to Info.plist</em></p>
+</li>
+<li>
+<p>From the drop-down list in the "Property" column, select <strong>Location Always Usage Description</strong>. Then add the following text to the "Value" column:</p>
+<pre><code>Please allow CoolBreeze to use your current location.
+</code></pre>
+<p><a href="Images/vs-ios-new-plist-added.png" target="_blank"><img src="Images/vs-ios-new-plist-added.png" alt="Updating Info.plist" style="max-width:100%;"></a></p>
+<p><em>Updating Info.plist</em></p>
+</li>
+<li>
+<p>To enable location services on Windows, you need to update the app manifest. Open the <strong>Package.appxmanifest</strong> file in the <strong>CoolBreeze.UWP</strong> project.</p>
+<p><a href="Images/vs-uwp-manifest-file.png" target="_blank"><img src="Images/vs-uwp-manifest-file.png" alt="Opening the Windows app manifest" style="max-width:100%;"></a></p>
+<p><em>Opening the Windows app manifest</em></p>
+</li>
+<li>
+<p>Click <strong>Capabilities</strong>, and then check the <strong>Location</strong> box.</p>
+<p><a href="Images/vs-uwp-capabilities.png" target="_blank"><img src="Images/vs-uwp-capabilities.png" alt="Updating the Windows app manifest" style="max-width:100%;"></a></p>
+<p><em>Updating the Windows app manifest</em></p>
+</li>
+<li>
+<p>Now that permissions are set to allow all of the CoolBreeze projects to access location services, it’s time to add code to retrieve location information. In Solution Explorer, right-click the "Helpers" folder in the <strong>CoolBreeze (Portable)</strong> project and use the <strong>Add</strong> &gt; <strong>Class</strong> command to add a class file named "LocationHelper.cs" to the project. Then replace the contents of the file with the following code:</p>
+<div class="highlight highlight-source-cs"><pre><span class="pl-k">using</span> <span class="pl-en">System</span>;
+<span class="pl-k">using</span> <span class="pl-en">System.Collections.Generic</span>;
+<span class="pl-k">using</span> <span class="pl-en">System.Linq</span>;
+<span class="pl-k">using</span> <span class="pl-en">System.Text</span>;
+<span class="pl-k">using</span> <span class="pl-en">System.Threading.Tasks</span>;
+
+<span class="pl-k">namespace</span> <span class="pl-en">CoolBreeze.Helpers</span>
+{
+    <span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-k">class</span> <span class="pl-en">LocationHelper</span>
+    {
+        <span class="pl-k">public</span> <span class="pl-k">async</span> <span class="pl-k">static</span> <span class="pl-en">Task</span>&lt;<span class="pl-en">Plugin</span>.<span class="pl-en">Geolocator</span>.<span class="pl-en">Abstractions</span>.<span class="pl-en">Position</span>&gt; <span class="pl-en">GetCurrentLocationAsync</span>()
+        {
+            Plugin.Geolocator.Abstractions.<span class="pl-en">Position</span> <span class="pl-en">location</span> = <span class="pl-k">new</span> <span class="pl-en">Plugin</span>.Geolocator.Abstractions.Position(<span class="pl-k">new</span> <span class="pl-en">Plugin</span>.Geolocator.Abstractions.Position()
+            {
+                Latitude = <span class="pl-c1">29.425700</span>,
+                Longitude = -<span class="pl-c1">98.486110</span>,
+            });
+
+            <span class="pl-k">var</span> <span class="pl-en">geolocator </span>= Plugin.Geolocator.CrossGeolocator.Current;
+
+            <span class="pl-k">try</span>
+            {
+                geolocator.DesiredAccuracy = <span class="pl-c1">100</span>;
+                location = <span class="pl-k">await</span> geolocator.GetPositionAsync();
+            }
+            <span class="pl-k">catch</span> { }
+
+            <span class="pl-k">return</span> location;
+        }
+    }
+}</pre></div>
+</li>
+</ol>
+<p>The code you just added contains an asynchronous method named <em>GetCurrentLocationAsync</em> that retrieves the user's location, complete with a default location for testing. It, in turn, relies on APIs in Xam.Plugin.Geolocator to retrieve the current location.</p>
+<p><a name="Exercise2"></a></p>
+<h2>Exercise 2: Add a tabbed page to the app</h2>
+<p>Now that location services are enabled on all platforms, it's time to build a user interface around them. In this exercise, you will add a new page for specifying location preferences and add a tabbed page to allow users to easily switch between the page showing location preferences and the page showing current weather conditions.</p>
+<ol>
+<li>
+<p>In Solution Explorer, right-click the <strong>CoolBreeze (Portable)</strong> project and select <strong>Add</strong> &gt; <strong>New Item...</strong>. Then select <strong>Forms Blank Content Page Xaml</strong>, specify "LocationPage.xaml" as the name, and click <strong>Add</strong>.</p>
+<p><a href="Images/vs-adding-location-page.png" target="_blank"><img src="Images/vs-adding-location-page.png" alt="Adding a location preferences page" style="max-width:100%;"></a></p>
+<p><em>Adding a location preferences page</em></p>
+</li>
+<li>
+<p>Replace the contents of <strong>LocationPage.xaml</strong> with the following XAML:</p>
+<div class="highlight highlight-text-xml"><pre>&lt;?<span class="pl-ent">xml</span><span class="pl-e"> version</span>=<span class="pl-s"><span class="pl-pds">"</span>1.0<span class="pl-pds">"</span></span><span class="pl-e"> encoding</span>=<span class="pl-s"><span class="pl-pds">"</span>utf-8<span class="pl-pds">"</span></span> ?&gt;
+&lt;<span class="pl-ent">ContentPage</span> <span class="pl-e">xmlns</span>=<span class="pl-s"><span class="pl-pds">"</span>http://xamarin.com/schemas/2014/forms<span class="pl-pds">"</span></span>
+             <span class="pl-e">xmlns</span><span class="pl-e">:</span><span class="pl-e">x</span>=<span class="pl-s"><span class="pl-pds">"</span>http://schemas.microsoft.com/winfx/2009/xaml<span class="pl-pds">"</span></span> <span class="pl-e">Title</span>=<span class="pl-s"><span class="pl-pds">"</span>Location<span class="pl-pds">"</span></span>
+             <span class="pl-e">x</span><span class="pl-e">:</span><span class="pl-e">Class</span>=<span class="pl-s"><span class="pl-pds">"</span>CoolBreeze.LocationPage<span class="pl-pds">"</span></span>&gt;
+
+    &lt;<span class="pl-ent">StackLayout</span> <span class="pl-e">Margin</span>=<span class="pl-s"><span class="pl-pds">"</span>20<span class="pl-pds">"</span></span> <span class="pl-e">VerticalOptions</span>=<span class="pl-s"><span class="pl-pds">"</span>Start<span class="pl-pds">"</span></span> <span class="pl-e">HorizontalOptions</span>=<span class="pl-s"><span class="pl-pds">"</span>Center<span class="pl-pds">"</span></span>&gt;
+
+        &lt;<span class="pl-ent">Label</span> <span class="pl-e">FontSize</span>=<span class="pl-s"><span class="pl-pds">"</span>Medium<span class="pl-pds">"</span></span> <span class="pl-e">Text</span>=<span class="pl-s"><span class="pl-pds">"</span>Select the way you want to get weather information. If you select to use your current location, your device may prompt you for permission.<span class="pl-pds">"</span></span>/&gt;
+
+        &lt;<span class="pl-ent">StackLayout</span> <span class="pl-e">Margin</span>=<span class="pl-s"><span class="pl-pds">"</span>0,20,0,0<span class="pl-pds">"</span></span> <span class="pl-e">WidthRequest</span>=<span class="pl-s"><span class="pl-pds">"</span>300<span class="pl-pds">"</span></span> <span class="pl-e">HorizontalOptions</span>=<span class="pl-s"><span class="pl-pds">"</span>CenterAndExpand<span class="pl-pds">"</span></span> <span class="pl-e">Orientation</span>=<span class="pl-s"><span class="pl-pds">"</span>Horizontal<span class="pl-pds">"</span></span>&gt;
+            &lt;<span class="pl-ent">Label</span> <span class="pl-e">FontSize</span>=<span class="pl-s"><span class="pl-pds">"</span>Medium<span class="pl-pds">"</span></span> <span class="pl-e">HorizontalOptions</span>=<span class="pl-s"><span class="pl-pds">"</span>Start<span class="pl-pds">"</span></span> <span class="pl-e">VerticalOptions</span>=<span class="pl-s"><span class="pl-pds">"</span>Center<span class="pl-pds">"</span></span> <span class="pl-e">Text</span>=<span class="pl-s"><span class="pl-pds">"</span>Use my current location<span class="pl-pds">"</span></span>/&gt;
+            &lt;<span class="pl-ent">Switch</span> <span class="pl-e">x</span><span class="pl-e">:</span><span class="pl-e">Name</span>=<span class="pl-s"><span class="pl-pds">"</span>useLocationToggle<span class="pl-pds">"</span></span> <span class="pl-e">HorizontalOptions</span>=<span class="pl-s"><span class="pl-pds">"</span>End<span class="pl-pds">"</span></span> <span class="pl-e">IsToggled</span>=<span class="pl-s"><span class="pl-pds">"</span>False<span class="pl-pds">"</span></span> <span class="pl-e">Margin</span>=<span class="pl-s"><span class="pl-pds">"</span>20,0,0,0<span class="pl-pds">"</span></span> <span class="pl-e">Toggled</span>=<span class="pl-s"><span class="pl-pds">"</span>UseLocationToggled<span class="pl-pds">"</span></span> <span class="pl-e">VerticalOptions</span>=<span class="pl-s"><span class="pl-pds">"</span>Center<span class="pl-pds">"</span></span>/&gt;
+        &lt;/<span class="pl-ent">StackLayout</span>&gt;
+
+        &lt;<span class="pl-ent">StackLayout</span> <span class="pl-e">Margin</span>=<span class="pl-s"><span class="pl-pds">"</span>0,20,0,0<span class="pl-pds">"</span></span> <span class="pl-e">WidthRequest</span>=<span class="pl-s"><span class="pl-pds">"</span>300<span class="pl-pds">"</span></span> <span class="pl-e">HorizontalOptions</span>=<span class="pl-s"><span class="pl-pds">"</span>CenterAndExpand<span class="pl-pds">"</span></span> <span class="pl-e">Orientation</span>=<span class="pl-s"><span class="pl-pds">"</span>Vertical<span class="pl-pds">"</span></span>&gt;
+            &lt;<span class="pl-ent">Label</span> <span class="pl-e">FontSize</span>=<span class="pl-s"><span class="pl-pds">"</span>Medium<span class="pl-pds">"</span></span> <span class="pl-e">HorizontalOptions</span>=<span class="pl-s"><span class="pl-pds">"</span>Start<span class="pl-pds">"</span></span> <span class="pl-e">VerticalOptions</span>=<span class="pl-s"><span class="pl-pds">"</span>Center<span class="pl-pds">"</span></span> <span class="pl-e">Text</span>=<span class="pl-s"><span class="pl-pds">"</span>Select a City:<span class="pl-pds">"</span></span>/&gt;
+            &lt;<span class="pl-ent">Picker</span> <span class="pl-e">Title</span>=<span class="pl-s"><span class="pl-pds">"</span>Select a city<span class="pl-pds">"</span></span> <span class="pl-e">x</span><span class="pl-e">:</span><span class="pl-e">Name</span>=<span class="pl-s"><span class="pl-pds">"</span>cityPicker<span class="pl-pds">"</span></span> <span class="pl-e">SelectedIndexChanged</span>=<span class="pl-s"><span class="pl-pds">"</span>SelectedCityChanged<span class="pl-pds">"</span></span> <span class="pl-e">WidthRequest</span>=<span class="pl-s"><span class="pl-pds">"</span>300<span class="pl-pds">"</span></span> <span class="pl-e">HorizontalOptions</span>=<span class="pl-s"><span class="pl-pds">"</span>StartAndExpand<span class="pl-pds">"</span></span>&gt;
+                &lt;<span class="pl-ent">Picker</span>.Items&gt;
+                    &lt;<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;Amsterdam (NL)&lt;/<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;
+                    &lt;<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;Atlanta (US)&lt;/<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;
+                    &lt;<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;Buenos Aires (AR)&lt;/<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;
+                    &lt;<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;Cairo (EG)&lt;/<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;
+                    &lt;<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;Calgary (CA)&lt;/<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;
+                    &lt;<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;Chicago (US)&lt;/<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;
+                    &lt;<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;Dallas (US)&lt;/<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;
+                    &lt;<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;Havana (CU)&lt;/<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;
+                    &lt;<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;Houston (US)&lt;/<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;
+                    &lt;<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;Las Vegas (US)&lt;/<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;
+                    &lt;<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;London (GB)&lt;/<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;
+                    &lt;<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;Los Angeles (US)&lt;/<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;
+                    &lt;<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;Manhattan (US)&lt;/<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;
+                    &lt;<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;San Diego (US)&lt;/<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;
+                    &lt;<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;Seattle (US)&lt;/<span class="pl-ent">x</span><span class="pl-ent">:</span><span class="pl-ent">String</span>&gt;
+                &lt;/<span class="pl-ent">Picker</span>.Items&gt;
+            &lt;/<span class="pl-ent">Picker</span>&gt;
+        &lt;/<span class="pl-ent">StackLayout</span>&gt;
+    &lt;/<span class="pl-ent">StackLayout</span>&gt;
+&lt;/<span class="pl-ent">ContentPage</span>&gt;</pre></div>
+</li>
+<li>
+<p>Open <strong>LocationPage.xaml.cs</strong> and replace its contents with the following code:</p>
+<div class="highlight highlight-source-cs"><pre><span class="pl-k">using</span> <span class="pl-en">System</span>;
+<span class="pl-k">using</span> <span class="pl-en">System.Collections.Generic</span>;
+<span class="pl-k">using</span> <span class="pl-en">System.Linq</span>;
+<span class="pl-k">using</span> <span class="pl-en">System.Text</span>;
+<span class="pl-k">using</span> <span class="pl-en">System.Threading.Tasks</span>;
+
+<span class="pl-k">using</span> <span class="pl-en">Xamarin.Forms</span>;
+
+<span class="pl-k">namespace</span> <span class="pl-en">CoolBreeze</span>
+{
+    <span class="pl-k">public</span> <span class="pl-k">partial</span> <span class="pl-k">class</span> <span class="pl-en">LocationPage</span> : <span class="pl-en">ContentPage</span>
+    {
+        <span class="pl-k">public</span> <span class="pl-en">LocationPage</span>()
+        {
+            InitializeComponent();
+        }
+
+        <span class="pl-k">protected</span> <span class="pl-k">override</span> <span class="pl-k">void</span> <span class="pl-en">OnAppearing</span>()
+        {
+            <span class="pl-k">if</span> (cityPicker.SelectedIndex &lt; <span class="pl-c1">0</span>) cityPicker.SelectedIndex = <span class="pl-c1">0</span>;
+            <span class="pl-c1">base</span>.OnAppearing();
+        }
+
+        <span class="pl-k">private</span> <span class="pl-k">void</span> <span class="pl-en">UseLocationToggled</span>(<span class="pl-k">object</span> <span class="pl-smi">sender</span>, <span class="pl-en">ToggledEventArgs</span> <span class="pl-smi">e</span>)
+        {
+            App.ViewModel.NeedsRefresh = <span class="pl-c1">true</span>;
+
+            <span class="pl-k">if</span> (e.Value)
+            {
+                App.ViewModel.LocationType = Common.LocationType.Location;
+            }
+            <span class="pl-k">else</span>
+            {
+                App.ViewModel.LocationType = Common.LocationType.City;
+            }
+        }
+
+        <span class="pl-k">private</span> <span class="pl-k">void</span> <span class="pl-en">SelectedCityChanged</span>(<span class="pl-k">object</span> <span class="pl-smi">sender</span>, <span class="pl-en">EventArgs</span> <span class="pl-smi">e</span>)
+        {
+            <span class="pl-k">if</span> (!App.ViewModel.IsBusy)
+            {
+                useLocationToggle.IsToggled = <span class="pl-c1">false</span>;
+
+                App.ViewModel.NeedsRefresh = <span class="pl-c1">true</span>;
+                App.ViewModel.LocationType = Common.LocationType.City;
+
+                <span class="pl-k">string</span> <span class="pl-en">selectedItem</span> = (sender <span class="pl-k">as</span> <span class="pl-en">Picker</span>).Items[(sender <span class="pl-k">as</span> <span class="pl-en">Picker</span>).SelectedIndex];
+
+                <span class="pl-k">var</span> <span class="pl-en">cityName </span>= selectedItem.Split(<span class="pl-s"><span class="pl-pds">'</span>(<span class="pl-pds">'</span></span>).First().Trim();
+                <span class="pl-k">var</span> <span class="pl-en">countryCode </span>= selectedItem.Split(<span class="pl-s"><span class="pl-pds">'</span>(<span class="pl-pds">'</span></span>).Last().Replace(<span class="pl-s"><span class="pl-pds">"</span>)<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>).Trim();
+
+                App.ViewModel.CityName = cityName;
+                App.ViewModel.CountryCode = countryCode;
+            }
+
+            App.ViewModel.IsBusy = <span class="pl-c1">false</span>;
+        }
+    }
+}</pre></div>
+</li>
+<li>
+<p>Right-click the <strong>CoolBreeze (Portable)</strong> project and use the <strong>Add</strong> &gt; <strong>New Item...</strong> command to add another page named <strong>StartPage.xaml</strong>.</p>
+<p><a href="Images/vs-adding-start-page.png" target="_blank"><img src="Images/vs-adding-start-page.png" alt="_Adding a tabbed start page" style="max-width:100%;"></a></p>
+<p><em>Adding a tabbed start page</em></p>
+</li>
+<li>
+<p>Replace the contents of <strong>StartPage.xaml</strong> file with the following XAML:</p>
+<div class="highlight highlight-text-xml"><pre>&lt;?<span class="pl-ent">xml</span><span class="pl-e"> version</span>=<span class="pl-s"><span class="pl-pds">"</span>1.0<span class="pl-pds">"</span></span><span class="pl-e"> encoding</span>=<span class="pl-s"><span class="pl-pds">"</span>utf-8<span class="pl-pds">"</span></span> ?&gt;
+&lt;<span class="pl-ent">TabbedPage</span> <span class="pl-e">xmlns</span>=<span class="pl-s"><span class="pl-pds">"</span>http://xamarin.com/schemas/2014/forms<span class="pl-pds">"</span></span>
+             <span class="pl-e">xmlns</span><span class="pl-e">:</span><span class="pl-e">x</span>=<span class="pl-s"><span class="pl-pds">"</span>http://schemas.microsoft.com/winfx/2009/xaml<span class="pl-pds">"</span></span>
+             <span class="pl-e">xmlns</span><span class="pl-e">:</span><span class="pl-e">local</span>=<span class="pl-s"><span class="pl-pds">"</span>clr-namespace:CoolBreeze<span class="pl-pds">"</span></span>
+             <span class="pl-e">x</span><span class="pl-e">:</span><span class="pl-e">Class</span>=<span class="pl-s"><span class="pl-pds">"</span>CoolBreeze.StartPage<span class="pl-pds">"</span></span>&gt;
+    
+    &lt;<span class="pl-ent">TabbedPage</span>.Children&gt;
+        &lt;<span class="pl-ent">local</span><span class="pl-ent">:</span><span class="pl-ent">LocationPage</span> <span class="pl-e">Icon</span>=<span class="pl-s"><span class="pl-pds">"</span>location.png<span class="pl-pds">"</span></span> <span class="pl-e">Title</span>=<span class="pl-s"><span class="pl-pds">"</span>LOCATION<span class="pl-pds">"</span></span>/&gt;
+        &lt;<span class="pl-ent">local</span><span class="pl-ent">:</span><span class="pl-ent">MainPage</span> <span class="pl-e">Icon</span>=<span class="pl-s"><span class="pl-pds">"</span>today.png<span class="pl-pds">"</span></span> <span class="pl-e">Title</span>=<span class="pl-s"><span class="pl-pds">"</span>NOW<span class="pl-pds">"</span></span>/&gt;
+    &lt;/<span class="pl-ent">TabbedPage</span>.Children&gt;
+
+&lt;/<span class="pl-ent">TabbedPage</span>&gt;</pre></div>
+</li>
+<li>
+<p>Open <strong>StartPage.xaml.cs</strong> and replace its contents with the following code:</p>
+<div class="highlight highlight-source-cs"><pre><span class="pl-k">using</span> <span class="pl-en">System</span>;
+<span class="pl-k">using</span> <span class="pl-en">System.Collections.Generic</span>;
+<span class="pl-k">using</span> <span class="pl-en">System.Linq</span>;
+<span class="pl-k">using</span> <span class="pl-en">System.Text</span>;
+<span class="pl-k">using</span> <span class="pl-en">System.Threading.Tasks</span>;
+<span class="pl-k">using</span> <span class="pl-en">Xamarin.Forms</span>;
+
+<span class="pl-k">namespace</span> <span class="pl-en">CoolBreeze</span>
+{
+    <span class="pl-k">public</span> <span class="pl-k">partial</span> <span class="pl-k">class</span> <span class="pl-en">StartPage</span> : <span class="pl-en">TabbedPage</span>
+    {
+        <span class="pl-k">public</span> <span class="pl-en">StartPage</span>()
+        {
+            InitializeComponent();
+        }
+
+        <span class="pl-k">protected</span> <span class="pl-k">override</span> <span class="pl-k">void</span> <span class="pl-en">OnAppearing</span>()
+        {
+            InitializeAppAsync();
+            <span class="pl-c1">base</span>.OnAppearing();
+        }
+
+        <span class="pl-k">private</span> <span class="pl-k">void</span> <span class="pl-en">InitializeAppAsync</span>()
+        {
+            <span class="pl-k">if</span> (App.ViewModel == <span class="pl-c1">null</span>) App.ViewModel = <span class="pl-k">new</span> <span class="pl-en">MainViewModel</span>();
+        }
+    }
+}</pre></div>
+</li>
+<li>
+<p>Open <strong>MainPage.xaml</strong> in the <strong>CoolBreeze (Portable)</strong> project and locate the <code>Picker</code> control:</p>
+<p><a href="Images/vs-main-picker.png" target="_blank"><img src="Images/vs-main-picker.png" alt="The city-picker control" style="max-width:100%;"></a></p>
+<p><em>The city-picker control</em></p>
+</li>
+<li>
+<p>Remove the <code>Picker</code> control and replace it with the following <code>Label</code> control:</p>
+<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">Label</span> <span class="pl-e">Margin</span>=<span class="pl-s"><span class="pl-pds">"</span>0,60,0,0<span class="pl-pds">"</span></span> <span class="pl-e">VerticalOptions</span>=<span class="pl-s"><span class="pl-pds">"</span>Start<span class="pl-pds">"</span></span> <span class="pl-e">HorizontalOptions</span>=<span class="pl-s"><span class="pl-pds">"</span>Center<span class="pl-pds">"</span></span>
+Text=<span class="pl-s"><span class="pl-pds">"</span>{Binding CurrentConditions.DisplayName}<span class="pl-pds">"</span></span>  <span class="pl-e">FontSize</span>=<span class="pl-s"><span class="pl-pds">"</span>Medium<span class="pl-pds">"</span></span>/&gt;</pre></div>
+</li>
+<li>
+<p>Open <strong>MainPage.xaml.cs</strong>. Find the method named <code>OnAppearing</code> and replace it with the following <code>OnAppearing</code> method:</p>
+<div class="highlight highlight-source-cs"><pre><span class="pl-k">protected</span> <span class="pl-k">override</span> <span class="pl-k">void</span> <span class="pl-en">OnAppearing</span>()
+{
+    <span class="pl-c1">this</span>.BindingContext = App.ViewModel;
+    <span class="pl-k">if</span> (App.ViewModel.NeedsRefresh) App.ViewModel.RefreshCurrentConditionsAsync();
+    <span class="pl-c1">base</span>.OnAppearing();
+}</pre></div>
+</li>
+<li>
+<p>Still in <strong>MainPage.xaml.cs</strong>, find the <code>SelectedCityChanged</code> method and delete it from the file.</p>
+</li>
+<li>
+<p>Open <strong>App.xaml.cs</strong> in the <strong>CoolBreeze (Portable)</strong> project. In the class constructor, modify the line of code that instantiates the <code>MainPage</code> class so that it instantiates <code>StartPage</code> instead.</p>
+<p><a href="Images/vs-updated-app-constructor.png" target="_blank"><img src="Images/vs-updated-app-constructor.png" alt="The updated App constructor" style="max-width:100%;"></a></p>
+<p><em>The updated App constructor</em></p>
+</li>
+<li>
+<p>Open <strong>WeatherHelper.cs</strong> in the "Helpers" folder of the <strong>CoolBreeze (Portable)</strong> project. Add the following method to the <code>WeatherHelper</code> class. DO NOT delete the <code>GetCurrentConditionsAsync</code> method that is already there; rather, add the new one and leave the old one in place. The new method accepts a longitude and latitude as parameters.</p>
+<div class="highlight highlight-source-cs"><pre><span class="pl-k">public</span> <span class="pl-k">async</span> <span class="pl-k">static</span> <span class="pl-en">Task</span>&lt;<span class="pl-en">WeatherInformation</span>&gt; <span class="pl-en">GetCurrentConditionsAsync</span>(<span class="pl-k">double</span> <span class="pl-smi">latitude</span>, <span class="pl-k">double</span> <span class="pl-smi">longitude</span>)
+{
+    <span class="pl-k">string</span> <span class="pl-en">url</span> = <span class="pl-pds">$"</span><span class="pl-s">http://traininglabservices.azurewebsites.net/api/weather/current?latitude=</span>{latitude}<span class="pl-s">&amp;longitude=</span>{longitude}<span class="pl-s">&amp;registrationCode=</span>{App.RegistrationCode}<span class="pl-pds">"</span>;
+    <span class="pl-en">HttpClient</span> <span class="pl-en">client</span> = <span class="pl-k">new</span> <span class="pl-en">HttpClient</span>();
+    <span class="pl-k">var</span> <span class="pl-en">response </span>= <span class="pl-k">await</span> client.GetStringAsync(url);
+    <span class="pl-k">var</span> <span class="pl-en">result </span>= Newtonsoft.Json.JsonConvert.DeserializeObject&lt;WeatherInformation&gt;(<span class="pl-en">response</span>);
+    <span class="pl-k">return</span> result;
+}</pre></div>
+</li>
+<li>
+<p>Open <strong>MainViewModel.cs</strong> in the "ViewModels" folder of the <strong>CoolBreeze (Portable)</strong> project. Add the following statements to the <code>MainViewModel</code> class to add a <code>Location</code> property to the view-model:</p>
+<div class="highlight highlight-source-cs"><pre><span class="pl-k">private</span> <span class="pl-en">Plugin.Geolocator.Abstractions.Position</span> _location;
+<span class="pl-k">public</span> <span class="pl-en">Plugin.Geolocator.Abstractions.Position</span> Location
+{
+    <span class="pl-k">get</span> { <span class="pl-k">return</span> <span class="pl-c1">this</span>._location; }
+    <span class="pl-k">set</span> { <span class="pl-c1">this</span>.SetProperty(ref <span class="pl-c1">this</span>._location, <span class="pl-k">value</span>); }
+}</pre></div>
+</li>
+<li>
+<p>Still in <strong>MainViewModel.cs</strong>, replace the <code>RefreshCurrentConditionsAsync</code> method with this one:</p>
+<div class="highlight highlight-source-cs"><pre><span class="pl-k">public</span> <span class="pl-k">async</span> <span class="pl-k">void</span> <span class="pl-en">RefreshCurrentConditionsAsync</span>()
+{
+    <span class="pl-c1">this</span>.IsBusy = <span class="pl-c1">true</span>;
+    <span class="pl-c1">this</span>.NeedsRefresh = <span class="pl-c1">false</span>;
+
+    <span class="pl-en">WeatherInformation</span> <span class="pl-en">results</span> = <span class="pl-c1">null</span>;
+
+    <span class="pl-k">switch</span> (<span class="pl-c1">this</span>.LocationType)
+    {
+        <span class="pl-k">case</span> LocationType.Location:
+            <span class="pl-k">if</span> (<span class="pl-c1">this</span>.Location == <span class="pl-c1">null</span>) <span class="pl-c1">this</span>.Location = <span class="pl-k">await</span> Helpers.LocationHelper.GetCurrentLocationAsync();
+            results = <span class="pl-k">await</span> Helpers.WeatherHelper.GetCurrentConditionsAsync(<span class="pl-c1">this</span>.Location.Latitude, <span class="pl-c1">this</span>.Location.Longitude);
+            <span class="pl-k">break</span>;              
+
+        <span class="pl-k">case</span> LocationType.City:
+            results = <span class="pl-k">await</span> Helpers.WeatherHelper.GetCurrentConditionsAsync(<span class="pl-c1">this</span>.CityName, <span class="pl-c1">this</span>.CountryCode);
+            <span class="pl-k">break</span>;
+    }
+
+    <span class="pl-c1">this</span>.CurrentConditions.Conditions = results.Conditions;
+    <span class="pl-c1">this</span>.CurrentConditions.Description = results.Description;
+    <span class="pl-c1">this</span>.CurrentConditions.DisplayName = results.DisplayName;
+    <span class="pl-c1">this</span>.CurrentConditions.Icon = results.Icon;
+    <span class="pl-c1">this</span>.CurrentConditions.Id = results.Id;
+    <span class="pl-c1">this</span>.CurrentConditions.MaxTemperature = results.MaxTemperature;
+    <span class="pl-c1">this</span>.CurrentConditions.MinTemperature = results.MinTemperature;
+    <span class="pl-c1">this</span>.CurrentConditions.Temperature = results.Temperature;
+    <span class="pl-c1">this</span>.CurrentConditions.Humidity = results.Humidity;
+    <span class="pl-c1">this</span>.CurrentConditions.TimeStamp = results.TimeStamp.ToLocalTime();
+
+    <span class="pl-c1">this</span>.IsBusy = <span class="pl-c1">false</span>;
+}</pre></div>
+</li>
+<li>
+<p>Now let's add some flair to the user interface by adding icons to the tabs in the tabbed page. Recall that image assets typically need to be placed in specific locations for each platform. In Solution Explorer, right-click the "drawable" folder in the <strong>CoolBreeze.Android</strong> project and select <strong>Add</strong> &gt; <strong>Existing Item...</strong> from the context menu.</p>
+<p><a href="Images/vs-add-to-drawable.png" target="_blank"><img src="Images/vs-add-to-drawable.png" alt="Adding items to the drawable folder" style="max-width:100%;"></a></p>
+<p><em>Adding items to the drawable folder</em></p>
+</li>
+<li>
+<p>Browse to the "Resources\Droid\Resources\drawable" folder in the zip file containing this challenge and select all of the files in that folder. Then click <strong>Add</strong>.</p>
+<p><a href="Images/fe-drawable.png" target="_blank"><img src="Images/fe-drawable.png" alt="Adding items to the &quot;drawable&quot; folder" style="max-width:100%;"></a></p>
+<p><em>Adding items to the "drawable" folder</em></p>
+</li>
+<li>
+<p>Repeat Steps 15 and 16 to add all the files in the zip file's "Resources\iOS\Resources" folder to the "Resources" folder of the <strong>CoolBreeze.iOS</strong> project.</p>
+</li>
+<li>
+<p>Repeat Steps 15 and 16 to add all the files in the zip file's "Resources\UWP" folder to the root of the <strong>CoolBreeze.UWP</strong> project.</p>
+</li>
+<li>
+<p>The next step is to build the app and test it. You can test location services in most mobile emulators, but it's easy enough to test on your PC. Right-click the <strong>CoolBreeze.UWP (Universal Windows)</strong> project and select <strong>Set as StartUp Project</strong> to make it the startup project. Right-click the project again and select <strong>Deploy</strong>. Now launch CoolBreeze on your local machine by clicking the <strong>Run</strong> button in the toolbar.</p>
+<p><a href="Images/run-uwp.png" target="_blank"><img src="Images/run-uwp.png" alt="Running CoolBreeze on the local machine" style="max-width:100%;"></a></p>
+<p><em>Running CoolBreeze on the local machine</em></p>
+</li>
+<li>
+<p>Observe the new tabbed navigation elements at the top of the page:</p>
+<p><a href="Images/app-uwp-tabs.png" target="_blank"><img src="Images/app-uwp-tabs.png" alt="CoolBreeze's new tabbed UI" style="max-width:100%;"></a></p>
+<p><em>CoolBreeze's new tabbed UI</em></p>
+</li>
+<li>
+<p>Toggle <strong>Use my current location</strong> to <strong>On</strong>, and then click the <strong>NOW</strong> tab to view weather conditions at your current location.</p>
+<p><a href="Images/app-use-location.png" target="_blank"><img src="Images/app-use-location.png" alt="Enabling &quot;Use my current location&quot;" style="max-width:100%;"></a></p>
+<p><em>Enabling "Use my current location"</em></p>
+</li>
+<li>
+<p>When prompted for permission to access your current location, click <strong>Yes</strong>.</p>
+<p><a href="Images/app-allow-location.png" target="_blank"><img src="Images/app-allow-location.png" alt="Allowing CoolBreeze to use your location" style="max-width:100%;"></a></p>
+<p><em>Allowing CoolBreeze to use your location</em></p>
+</li>
+<li>
+<p>Confirm that CoolBreeze reports the weather at your current location.</p>
+<p><a href="Images/app-local-condtions.png" target="_blank"><img src="Images/app-local-condtions.png" alt="CoolBreeze showing the weather in Pecan Grove, TX" style="max-width:100%;"></a></p>
+<p><em>CoolBreeze showing the weather in Pecan Grove, TX</em></p>
+</li>
+</ol>
+<p>Feel free to run the app on iOS and Android as well to see how it behaves there. Most emulators allow you to set the current location in order to test apps that use geolocation services by varying the location that the geolocation API returns.</p>
+<p><a name="Exercise3"></a></p>
+<h2>Exercise 3: Add toolbar navigation to the app</h2>
+<p>In this exercise, you will further enhance CoolBreeze by adding a master/detail view allowing users to view weather forecasts as well as current weather conditions. You will also add a toolbar to facilitate switching from the view showing the current weather to the view showing the weather forecast.</p>
+<ol>
+<li>
+<p>Open <strong>WeatherHelper.cs</strong> in the "Helpers" folder of the <strong>CoolBreeze (Portable)</strong> project. Then add the following methods to the <code>WeatherHelper</code> class:</p>
+<div class="highlight highlight-source-cs"><pre><span class="pl-k">public</span> <span class="pl-k">async</span> <span class="pl-k">static</span> <span class="pl-en">Task</span>&lt;<span class="pl-en">List</span>&lt;<span class="pl-en">WeatherInformation</span>&gt;&gt; <span class="pl-en">GetForecastAsync</span>(<span class="pl-k">double</span> <span class="pl-smi">latitude</span>, <span class="pl-k">double</span> <span class="pl-smi">longitude</span>)
+{
+    <span class="pl-k">string</span> <span class="pl-en">url</span> = <span class="pl-pds">$"</span><span class="pl-s">http://traininglabservices.azurewebsites.net/api/weather/forecast?latitude=</span>{latitude}<span class="pl-s">&amp;longitude=</span>{longitude}<span class="pl-s">&amp;registrationCode=</span>{App.RegistrationCode}<span class="pl-pds">"</span>;
+
+    <span class="pl-en">HttpClient</span> <span class="pl-en">client</span> = <span class="pl-k">new</span> <span class="pl-en">HttpClient</span>();
+    <span class="pl-k">var</span> <span class="pl-en">response </span>= <span class="pl-k">await</span> client.GetStringAsync(url);
+    <span class="pl-k">var</span> <span class="pl-en">result </span>= Newtonsoft.Json.JsonConvert.DeserializeObject&lt;List&lt;WeatherInformation&gt;&gt;(<span class="pl-en">response</span>);
+    <span class="pl-k">return</span> result;
+}
+
+<span class="pl-k">public</span> <span class="pl-k">async</span> <span class="pl-k">static</span> <span class="pl-en">Task</span>&lt;<span class="pl-en">List</span>&lt;<span class="pl-en">WeatherInformation</span>&gt;&gt; <span class="pl-en">GetForecastAsync</span>(<span class="pl-k">string</span> <span class="pl-smi">cityName</span>, <span class="pl-k">string</span> <span class="pl-smi">countryCode</span>)
+{
+    <span class="pl-k">string</span> <span class="pl-en">url</span> = <span class="pl-pds">$"</span><span class="pl-s">http://traininglabservices.azurewebsites.net/api/weather/forecast/city?cityName=</span>{cityName}<span class="pl-s">&amp;countryCode=</span>{countryCode}<span class="pl-s">&amp;registrationCode=</span>{App.RegistrationCode}<span class="pl-pds">"</span>;
+
+    <span class="pl-en">HttpClient</span> <span class="pl-en">client</span> = <span class="pl-k">new</span> <span class="pl-en">HttpClient</span>();
+    <span class="pl-k">var</span> <span class="pl-en">response </span>= <span class="pl-k">await</span> client.GetStringAsync(url);
+    <span class="pl-k">var</span> <span class="pl-en">result </span>= Newtonsoft.Json.JsonConvert.DeserializeObject&lt;List&lt;WeatherInformation&gt;&gt;(<span class="pl-en">response</span>);
+    <span class="pl-k">return</span> result;
+}</pre></div>
+</li>
+<li>
+<p>Open <strong>MainViewModel.cs</strong> in the "ViewModels" folder of the <strong>CoolBreeze (Portable)</strong> project. Add the following statements to the <code>MainViewModel</code> class to add a <code>Forecast</code> property to the view-model.</p>
+<div class="highlight highlight-source-cs"><pre><span class="pl-k">private</span> <span class="pl-en">ObservableCollection</span>&lt;<span class="pl-en">WeatherInformation</span>&gt; <span class="pl-en">_forecast</span>;
+<span class="pl-k">public</span> <span class="pl-en">ObservableCollection</span>&lt;<span class="pl-en">WeatherInformation</span>&gt; Forecast
+{
+    <span class="pl-k">get</span> { <span class="pl-k">if</span> (<span class="pl-c1">this</span>._forecast == <span class="pl-c1">null</span>) <span class="pl-c1">this</span>._forecast = <span class="pl-k">new</span> <span class="pl-en">ObservableCollection</span>&lt;WeatherInformation&gt;(); <span class="pl-k">return</span> <span class="pl-c1">this</span>._forecast; }
+    <span class="pl-k">set</span> { <span class="pl-c1">this</span>.SetProperty(ref <span class="pl-c1">this</span>._forecast, <span class="pl-k">value</span>); }
+}</pre></div>
+</li>
+<li>
+<p>Paste the following method into the <code>MainViewModel</code> class:</p>
+<div class="highlight highlight-source-cs"><pre><span class="pl-k">public</span> <span class="pl-k">async</span> <span class="pl-k">void</span> <span class="pl-en">RefreshForecastAsync</span>()
+{
+    <span class="pl-c1">this</span>.IsBusy = <span class="pl-c1">true</span>;
+    <span class="pl-c1">this</span>.NeedsRefresh = <span class="pl-c1">false</span>;
+
+    <span class="pl-en">List</span>&lt;<span class="pl-en">WeatherInformation</span>&gt; <span class="pl-en">results</span> = <span class="pl-c1">null</span>;
+
+    <span class="pl-c1">this</span>.Forecast.Clear();
+
+    <span class="pl-k">switch</span> (<span class="pl-c1">this</span>.LocationType)
+    {
+        <span class="pl-k">case</span> LocationType.Location:
+
+            <span class="pl-k">if</span> (<span class="pl-c1">this</span>.Location == <span class="pl-c1">null</span>) <span class="pl-c1">this</span>.Location = <span class="pl-k">await</span> Helpers.LocationHelper.GetCurrentLocationAsync();
+            results = <span class="pl-k">await</span> Helpers.WeatherHelper.GetForecastAsync(<span class="pl-c1">this</span>.Location.Latitude, <span class="pl-c1">this</span>.Location.Longitude);
+            <span class="pl-k">break</span>;                
+        <span class="pl-k">case</span> LocationType.City:
+            results = <span class="pl-k">await</span> Helpers.WeatherHelper.GetForecastAsync(<span class="pl-c1">this</span>.CityName, <span class="pl-c1">this</span>.CountryCode);
+            <span class="pl-k">break</span>;
+    }
+
+    <span class="pl-k">foreach</span> (var result <span class="pl-k">in</span> results)
+    {
+        <span class="pl-c1">this</span>.Forecast.Add(result);
+    }
+
+    <span class="pl-c1">this</span>.IsBusy = <span class="pl-c1">false</span>;
+}</pre></div>
+</li>
+<li>
+<p>Right-click the <strong>CoolBreeze (Portable)</strong> project and use the <strong>Add</strong> &gt; <strong>New Item...</strong> command to add a page named <strong>ForecastPage.xaml</strong> to the project.</p>
+<p><a href="Images/vs-adding-forecast-page.png" target="_blank"><img src="Images/vs-adding-forecast-page.png" alt="Adding a forecast page" style="max-width:100%;"></a></p>
+<p><em>Adding a forecast page</em></p>
+</li>
+<li>
+<p>Replace the contents of <strong>ForecastPage.xaml</strong> with the following XAML:</p>
+<div class="highlight highlight-text-xml"><pre>&lt;?<span class="pl-ent">xml</span><span class="pl-e"> version</span>=<span class="pl-s"><span class="pl-pds">"</span>1.0<span class="pl-pds">"</span></span><span class="pl-e"> encoding</span>=<span class="pl-s"><span class="pl-pds">"</span>utf-8<span class="pl-pds">"</span></span> ?&gt;
+&lt;<span class="pl-ent">ContentPage</span> <span class="pl-e">xmlns</span>=<span class="pl-s"><span class="pl-pds">"</span>http://xamarin.com/schemas/2014/forms<span class="pl-pds">"</span></span>
+             <span class="pl-e">xmlns</span><span class="pl-e">:</span><span class="pl-e">x</span>=<span class="pl-s"><span class="pl-pds">"</span>http://schemas.microsoft.com/winfx/2009/xaml<span class="pl-pds">"</span></span> <span class="pl-e">Title</span>=<span class="pl-s"><span class="pl-pds">"</span>{Binding CurrentConditions.DisplayName}<span class="pl-pds">"</span></span>
+             <span class="pl-e">x</span><span class="pl-e">:</span><span class="pl-e">Class</span>=<span class="pl-s"><span class="pl-pds">"</span>CoolBreeze.ForecastPage<span class="pl-pds">"</span></span>&gt;
+
+    &lt;<span class="pl-ent">Grid</span>&gt;
+        &lt;<span class="pl-ent">ListView</span> <span class="pl-e">Margin</span>=<span class="pl-s"><span class="pl-pds">"</span>40<span class="pl-pds">"</span></span> <span class="pl-e">ItemsSource</span>=<span class="pl-s"><span class="pl-pds">"</span>{Binding Forecast}<span class="pl-pds">"</span></span> &gt;
+            &lt;<span class="pl-ent">ListView</span>.ItemTemplate&gt;
+                &lt;<span class="pl-ent">DataTemplate</span>&gt;
+                    &lt;<span class="pl-ent">ViewCell</span>&gt;
+                        &lt;<span class="pl-ent">StackLayout</span> <span class="pl-e">Orientation</span>=<span class="pl-s"><span class="pl-pds">"</span>Horizontal<span class="pl-pds">"</span></span>&gt;
+                            &lt;<span class="pl-ent">Image</span> <span class="pl-e">VerticalOptions</span>=<span class="pl-s"><span class="pl-pds">"</span>Center<span class="pl-pds">"</span></span> <span class="pl-e">Aspect</span>=<span class="pl-s"><span class="pl-pds">"</span>AspectFit<span class="pl-pds">"</span></span> <span class="pl-e">HeightRequest</span>=<span class="pl-s"><span class="pl-pds">"</span>40<span class="pl-pds">"</span></span> <span class="pl-e">WidthRequest</span>=<span class="pl-s"><span class="pl-pds">"</span>40<span class="pl-pds">"</span></span> <span class="pl-e">Source</span>=<span class="pl-s"><span class="pl-pds">"</span>{Binding Icon, Converter={StaticResource IconToUrlConverter}}<span class="pl-pds">"</span></span> /&gt;
+                            &lt;<span class="pl-ent">Label</span> <span class="pl-e">VerticalOptions</span>=<span class="pl-s"><span class="pl-pds">"</span>Center<span class="pl-pds">"</span></span> <span class="pl-e">FontSize</span>=<span class="pl-s"><span class="pl-pds">"</span>Micro<span class="pl-pds">"</span></span> <span class="pl-e">Text</span>=<span class="pl-s"><span class="pl-pds">"</span>{Binding TimeStamp, Converter={StaticResource ForecastTimeLabelConverter}}<span class="pl-pds">"</span></span> /&gt;
+                            &lt;<span class="pl-ent">Label</span> <span class="pl-e">FontSize</span>=<span class="pl-s"><span class="pl-pds">"</span>Medium<span class="pl-pds">"</span></span> <span class="pl-e">VerticalOptions</span>=<span class="pl-s"><span class="pl-pds">"</span>Center<span class="pl-pds">"</span></span> <span class="pl-e">Text</span>=<span class="pl-s"><span class="pl-pds">"</span>{Binding Conditions}<span class="pl-pds">"</span></span> /&gt;
+                            &lt;<span class="pl-ent">Label</span> <span class="pl-e">VerticalOptions</span>=<span class="pl-s"><span class="pl-pds">"</span>Center<span class="pl-pds">"</span></span> <span class="pl-e">Text</span>=<span class="pl-s"><span class="pl-pds">"</span>{Binding MaxTemperaturem, Converter={StaticResource CharacterLabelConverter}, ConverterParameter=°}<span class="pl-pds">"</span></span> /&gt;
+                            &lt;<span class="pl-ent">Label</span> <span class="pl-e">FontSize</span>=<span class="pl-s"><span class="pl-pds">"</span>Small<span class="pl-pds">"</span></span> <span class="pl-e">VerticalOptions</span>=<span class="pl-s"><span class="pl-pds">"</span>Center<span class="pl-pds">"</span></span> <span class="pl-e">Text</span>=<span class="pl-s"><span class="pl-pds">"</span>HUMIDITY: <span class="pl-pds">"</span></span>/&gt;
+                            &lt;<span class="pl-ent">Label</span> <span class="pl-e">FontSize</span>=<span class="pl-s"><span class="pl-pds">"</span>Small<span class="pl-pds">"</span></span> <span class="pl-e">VerticalOptions</span>=<span class="pl-s"><span class="pl-pds">"</span>Center<span class="pl-pds">"</span></span> <span class="pl-e">Text</span>=<span class="pl-s"><span class="pl-pds">"</span>{Binding Humidity, Converter={StaticResource CharacterLabelConverter}, ConverterParameter=%}<span class="pl-pds">"</span></span> /&gt;
+                        &lt;/<span class="pl-ent">StackLayout</span>&gt;
+                    &lt;/<span class="pl-ent">ViewCell</span>&gt;
+                &lt;/<span class="pl-ent">DataTemplate</span>&gt;
+            &lt;/<span class="pl-ent">ListView</span>.ItemTemplate&gt;
+        &lt;/<span class="pl-ent">ListView</span>&gt;
+
+        &lt;<span class="pl-ent">ActivityIndicator</span> <span class="pl-e">Color</span>=<span class="pl-s"><span class="pl-pds">"</span>{StaticResource AppAccentColor}<span class="pl-pds">"</span></span> <span class="pl-e">VerticalOptions</span>=<span class="pl-s"><span class="pl-pds">"</span>Center<span class="pl-pds">"</span></span> <span class="pl-e">HorizontalOptions</span>=<span class="pl-s"><span class="pl-pds">"</span>Center<span class="pl-pds">"</span></span> <span class="pl-e">IsRunning</span>=<span class="pl-s"><span class="pl-pds">"</span>{Binding IsBusy}<span class="pl-pds">"</span></span> <span class="pl-e">IsEnabled</span>=<span class="pl-s"><span class="pl-pds">"</span>{Binding IsBusy}<span class="pl-pds">"</span></span> <span class="pl-e">IsVisible</span>=<span class="pl-s"><span class="pl-pds">"</span>{Binding IsBusy}<span class="pl-pds">"</span></span>&gt;
+            &lt;<span class="pl-ent">ActivityIndicator</span>.WidthRequest&gt;
+                &lt;<span class="pl-ent">OnPlatform</span> <span class="pl-e">x</span><span class="pl-e">:</span><span class="pl-e">TypeArguments</span>=<span class="pl-s"><span class="pl-pds">"</span>x:Double<span class="pl-pds">"</span></span> <span class="pl-e">iOS</span>=<span class="pl-s"><span class="pl-pds">"</span>100<span class="pl-pds">"</span></span> <span class="pl-e">Android</span>=<span class="pl-s"><span class="pl-pds">"</span>100<span class="pl-pds">"</span></span> <span class="pl-e">WinPhone</span>=<span class="pl-s"><span class="pl-pds">"</span>400<span class="pl-pds">"</span></span> /&gt;
+            &lt;/<span class="pl-ent">ActivityIndicator</span>.WidthRequest&gt;
+        &lt;/<span class="pl-ent">ActivityIndicator</span>&gt;
+    &lt;/<span class="pl-ent">Grid</span>&gt;
+&lt;/<span class="pl-ent">ContentPage</span>&gt;</pre></div>
+</li>
+<li>
+<p>Open <strong>ForecastPage.xaml.cs</strong> and add the following method to the <code>ForecastPage</code> class:</p>
+<div class="highlight highlight-source-cs"><pre><span class="pl-k">protected</span> <span class="pl-k">override</span> <span class="pl-k">void</span> <span class="pl-en">OnAppearing</span>()
+{
+    <span class="pl-c1">this</span>.BindingContext = App.ViewModel;
+    App.ViewModel.RefreshForecastAsync();
+    <span class="pl-c1">base</span>.OnAppearing();
+}</pre></div>
+</li>
+<li>
+<p>Open <strong>StartPage.xaml</strong> and locate the <code>TabbedPage.Children</code> element.</p>
+<p><a href="Images/vs-tabbed-children.png" target="_blank"><img src="Images/vs-tabbed-children.png" alt="Locating the TabbedPage.Children element" style="max-width:100%;"></a></p>
+<p><em>Locating the TabbedPage.Children element</em></p>
+</li>
+<li>
+<p>Add the following statements directly above the <code>TabbedPage.Children</code> element to add a toolbar button to the page:</p>
+<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">TabbedPage</span>.ToolbarItems&gt;       
+    &lt;<span class="pl-ent">ToolbarItem</span> <span class="pl-e">Text</span>=<span class="pl-s"><span class="pl-pds">"</span>FORECAST<span class="pl-pds">"</span></span> <span class="pl-e">Order</span>=<span class="pl-s"><span class="pl-pds">"</span>Primary<span class="pl-pds">"</span></span> <span class="pl-e">Icon</span>=<span class="pl-s"><span class="pl-pds">"</span>forecast.png<span class="pl-pds">"</span></span> <span class="pl-e">Clicked</span>=<span class="pl-s"><span class="pl-pds">"</span>ViewForecastClicked<span class="pl-pds">"</span></span> /&gt;
+&lt;/<span class="pl-ent">TabbedPage</span>.ToolbarItems&gt;</pre></div>
+</li>
+<li>
+<p>Open <strong>StartPage.xaml.cs</strong> and add the following method to the <code>StartPage</code> class. This is the method called when a user taps the toolbar button:</p>
+<div class="highlight highlight-source-cs"><pre><span class="pl-k">private</span> <span class="pl-k">async</span> <span class="pl-k">void</span> <span class="pl-en">ViewForecastClicked</span>(<span class="pl-k">object</span> <span class="pl-smi">sender</span>, <span class="pl-en">EventArgs</span> <span class="pl-smi">e</span>)
+{
+    <span class="pl-k">await</span> Navigation.PushAsync(<span class="pl-k">new</span> <span class="pl-en">ForecastPage</span>());
+}</pre></div>
+</li>
+<li>
+<p>Open <strong>App.xaml.cs</strong>. In the class constructor, modify the line of code that initializes the <code>MainPage</code> property as shown below:</p>
+<p><a href="Images/vs-new-navigation.png" target="_blank"><img src="Images/vs-new-navigation.png" alt="Updating the MainPage property" style="max-width:100%;"></a></p>
+<p><em>Updating the MainPage property</em></p>
+</li>
+<li>
+<p>Launch the Android version of the app and tap the <strong>Forecast</strong> button in the toolbar:</p>
+<p><a href="Images/app-final-droid.png" target="_blank"><img src="Images/app-final-droid.png" alt="Navigating to the forecast page on Android" style="max-width:100%;"></a></p>
+<p><em>Navigating to the forecast page on Android</em></p>
+</li>
+<li>
+<p>Confirm that a weather forecast for the current location is displayed:</p>
+<p><a href="Images/app-final-droid-forecast.png" target="_blank"><img src="Images/app-final-droid-forecast.png" alt="Viewing the local weather forecast" style="max-width:100%;"></a></p>
+<p><em>Viewing the local weather forecast</em></p>
+</li>
+</ol>
+<p>Run the iOS and Windows versions of the app, too, and compare the experiences there to the experiences on Android.</p>
+<p><a name="Summary"></a></p>
+<h2>Summary</h2>
+<p>Part 2 of the Xamarin Challenge is complete. To this point, 100% of the code and XAML added to the solution is shared across all platforms. In a few days, you'll receive Part 3, in which you will add telemetry to CoolBreeze to improve its overall stability and maintainability.</p>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
