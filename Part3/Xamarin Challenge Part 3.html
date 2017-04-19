@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Xamarin Challenge Part 3</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<style type="text/css">
+.highlight  { background: #ffffff; }
+.highlight .c { color: #999988; font-style: italic } /* Comment */
+.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.highlight .k { font-weight: bold } /* Keyword */
+.highlight .o { font-weight: bold } /* Operator */
+.highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
+.highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
+.highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #aa0000 } /* Generic.Error */
+.highlight .gh { color: #999999 } /* Generic.Heading */
+.highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
+.highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #555555 } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #aaaaaa } /* Generic.Subheading */
+.highlight .gt { color: #aa0000 } /* Generic.Traceback */
+.highlight .kc { font-weight: bold } /* Keyword.Constant */
+.highlight .kd { font-weight: bold } /* Keyword.Declaration */
+.highlight .kp { font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
+.highlight .m { color: #009999 } /* Literal.Number */
+.highlight .s { color: #d14 } /* Literal.String */
+.highlight .na { color: #008080 } /* Name.Attribute */
+.highlight .nb { color: #0086B3 } /* Name.Builtin */
+.highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
+.highlight .no { color: #008080 } /* Name.Constant */
+.highlight .ni { color: #800080 } /* Name.Entity */
+.highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
+.highlight .nn { color: #555555 } /* Name.Namespace */
+.highlight .nt { color: #000080 } /* Name.Tag */
+.highlight .nv { color: #008080 } /* Name.Variable */
+.highlight .ow { font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #009999 } /* Literal.Number.Float */
+.highlight .mh { color: #009999 } /* Literal.Number.Hex */
+.highlight .mi { color: #009999 } /* Literal.Number.Integer */
+.highlight .mo { color: #009999 } /* Literal.Number.Oct */
+.highlight .sb { color: #d14 } /* Literal.String.Backtick */
+.highlight .sc { color: #d14 } /* Literal.String.Char */
+.highlight .sd { color: #d14 } /* Literal.String.Doc */
+.highlight .s2 { color: #d14 } /* Literal.String.Double */
+.highlight .se { color: #d14 } /* Literal.String.Escape */
+.highlight .sh { color: #d14 } /* Literal.String.Heredoc */
+.highlight .si { color: #d14 } /* Literal.String.Interpol */
+.highlight .sx { color: #d14 } /* Literal.String.Other */
+.highlight .sr { color: #009926 } /* Literal.String.Regex */
+.highlight .s1 { color: #d14 } /* Literal.String.Single */
+.highlight .ss { color: #990073 } /* Literal.String.Symbol */
+.highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #008080 } /* Name.Variable.Class */
+.highlight .vg { color: #008080 } /* Name.Variable.Global */
+.highlight .vi { color: #008080 } /* Name.Variable.Instance */
+.highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+.pl-c {
+    color: #969896;
+}
+
+.pl-c1,.pl-mdh,.pl-mm,.pl-mp,.pl-mr,.pl-s1 .pl-v,.pl-s3,.pl-sc,.pl-sv {
+    color: #0086b3;
+}
+
+.pl-e,.pl-en {
+    color: #795da3;
+}
+
+.pl-s1 .pl-s2,.pl-smi,.pl-smp,.pl-stj,.pl-vo,.pl-vpf {
+    color: #333;
+}
+
+.pl-ent {
+    color: #63a35c;
+}
+
+.pl-k,.pl-s,.pl-st {
+    color: #a71d5d;
+}
+
+.pl-pds,.pl-s1,.pl-s1 .pl-pse .pl-s2,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre,.pl-src,.pl-v {
+    color: #df5000;
+}
+
+.pl-id {
+    color: #b52a1d;
+}
+
+.pl-ii {
+    background-color: #b52a1d;
+    color: #f8f8f8;
+}
+
+.pl-sr .pl-cce {
+    color: #63a35c;
+    font-weight: bold;
+}
+
+.pl-ml {
+    color: #693a17;
+}
+
+.pl-mh,.pl-mh .pl-en,.pl-ms {
+    color: #1d3e81;
+    font-weight: bold;
+}
+
+.pl-mq {
+    color: #008080;
+}
+
+.pl-mi {
+    color: #333;
+    font-style: italic;
+}
+
+.pl-mb {
+    color: #333;
+    font-weight: bold;
+}
+
+.pl-md,.pl-mdhf {
+    background-color: #ffecec;
+    color: #bd2c00;
+}
+
+.pl-mdht,.pl-mi1 {
+    background-color: #eaffea;
+    color: #55a532;
+}
+
+.pl-mdr {
+    color: #795da3;
+    font-weight: bold;
+}
+
+.pl-mo {
+    color: #1d3e81;
+}
+.task-list {
+padding-left:10px;
+margin-bottom:0;
+}
+
+.task-list li {
+    margin-left: 20px;
+}
+
+.task-list-item {
+list-style-type:none;
+padding-left:10px;
+}
+
+.task-list-item label {
+font-weight:400;
+}
+
+.task-list-item.enabled label {
+cursor:pointer;
+}
+
+.task-list-item+.task-list-item {
+margin-top:3px;
+}
+
+.task-list-item-checkbox {
+display:inline-block;
+margin-left:-20px;
+margin-right:3px;
+vertical-align:1px;
+}
+</style>
+</head>
+<body>
+<p><a name="HOLTitle"></a></p>
+<h1>Xamarin Challenge Part 3</h1>
+<hr>
+<p><a name="Overview"></a></p>
+<h2>Overview</h2>
+<p>One of the key challenges in maintaining and supporting mobile apps is understanding what users are experiencing once your app is published. No matter how perfectly you write your code, or how thorough you are about exception handling and logging, apps sometimes misbehave, and even crash. When they do, you need to know what went wrong and why. Services such as <a href="https://hockeyapp.net/">HockeyApp</a> and <a href="https://www.visualstudio.com/vs/mobile-center/" title="Visual Studio Mobile Center">Visual Studio Mobile Center</a> make it possible to collect crash data from various devices, prioritize your actions based on the number of users seeing the crash, and get full stack traces to help you identify and fix the problem.</p>
+<p>Beyond collecting crash data, you may want statistics regarding how many users are launching your app, where they are located, and the languages they speak. Visual Studio Mobile Center makes it easy to collect this information and more. It even allows you to integrate event tracking to collect rich behavioral analytics to understand which feature is used most often, which screens are never seen, or how users utilize in-app purchases.</p>
+<p>Visual Studio Mobile Center brings services commonly used by mobile developers together into a single, integrated product. You can build, test, distribute, and monitor your mobile apps and easily add back-end cloud services to scale your app to serve millions of users.</p>
+<p>In Part 3 of the Xamarin Challenge, you will enhance the CoolBreeze app that you built in Parts 1 and 2 with crash analytics and learn how to view crash analytics in Visual Studio Mobile Center. You will also have the opportunity to register to win one of two Surface Studios awarded to individuals who complete all three parts of the challenge.</p>
+<p><a name="Objectives"></a></p>
+<h3>Objectives</h3>
+<p>In this challenge, you will learn how to:</p>
+<ul>
+<li>Create a Visual Studio Mobile Center account</li>
+<li>Register an app with the Visual Studio Mobile Center</li>
+<li>Add crash analytics to a Xamarin Forms app</li>
+<li>View crash reports in Visual Studio Mobile Center</li>
+</ul>
+<p>Your feedback is important. If you run into issues while working the exercises in this challenge, please contact us at <a href="mailto:xamarinchallengehelp@microsoft.com">xamarinchallengehelp@microsoft.com</a>.</p>
+<p><a name="Prerequisites"></a></p>
+<h3>Prerequisites</h3>
+<p>The following are required to complete this challenge:</p>
+<ul>
+<li>Completion of Xamarin Challenge Part 2</li>
+<li><a href="https://www.visualstudio.com/vs/">Visual Studio Community 2017</a> or higher</li>
+<li>Windows 10</li>
+</ul>
+<p>If you wish to build and run the iOS version of the challenge app, you also have to have a Mac running OS X 10.11 or higher, and both the Mac and the PC running Visual Studio 2017 require further configuration. For details, see <a href="https://developer.xamarin.com/guides/ios/getting_started/installation/windows/">https://developer.xamarin.com/guides/ios/getting_started/installation/windows/</a>.</p>
+<hr>
+<p><a name="Exercises"></a></p>
+<h2>Exercises</h2>
+<p>This challenge includes the following exercises:</p>
+<ul>
+<li><a href="#Exercise1">Exercise 1: Register the app with Visual Studio Mobile Center</a></li>
+<li><a href="#Exercise2">Exercise 2: Add crash analytics support to the app</a></li>
+<li><a href="#Exercise3">Exercise 3: Submit your work and register for the prize drawing</a></li>
+</ul>
+<p>Estimated time to complete this challenge: <strong>30</strong> minutes.</p>
+<p><a name="Exercise1"></a></p>
+<h2>Exercise 1: Register the app with Visual Studio Mobile Center</h2>
+<p>Before you can use Visual Studio Mobile Center to add telemetry and crash analytics to your app, you need to create a Visual Studio Mobile Center account and register the app with Visual Studio Mobile Center. In this exercise, you will create an account and then register the Android and iOS versions of CoolBreeze.</p>
+<ol>
+<li>
+<p><strong>If you have not completed Xamarin Challenge 2, stop now and complete it before proceeding.</strong></p>
+</li>
+<li>
+<p>In a browser, navigate to the <a href="https://mobile.azure.com/login">https://mobile.azure.com/login</a>. Once there, click <strong>Connect with Microsoft</strong>. If you are prompted to log in, do so using your Microsoft account.</p>
+<p><a href="Images/portal-click-msft-account.png" target="_blank"><img src="Images/portal-click-msft-account.png" alt="Connecting with a Microsoft account" style="max-width:100%;"></a></p>
+<p><em>Connecting with a Microsoft account</em></p>
+</li>
+<li>
+<p>Enter a user name for your Visual Studio Mobile Center account and click <strong>Save</strong>.</p>
+<p><a href="Images/portal-create-username.png" target="_blank"><img src="Images/portal-create-username.png" alt="Choosing a user name" style="max-width:100%;"></a></p>
+<p><em>Choosing a user name</em></p>
+</li>
+<li>
+<p>Click the profile button in the lower-left corner of the page, and then select <strong>Settings</strong>.</p>
+<p><a href="Images/portal-click-settings.png" target="_blank"><img src="Images/portal-click-settings.png" alt="Viewing profile settings" style="max-width:100%;"></a></p>
+<p><em>Viewing profile settings</em></p>
+</li>
+<li>
+<p>Enter your preferred display name and click <strong>Update Details</strong>. Then click the browser's Back button to close the profile settings.</p>
+</li>
+<li>
+<p>Now that you have created a Visual Studio Mobile Center account, the next step is to register the CoolBreeze app that you built for the target platforms that it supports. To begin, click <strong>Add new app</strong>.</p>
+<p><a href="Images/new-app.png" target="_blank"><img src="Images/new-app.png" alt="Adding a new app to Visual Studio Mobile Center" style="max-width:100%;"></a></p>
+<p><em>Adding a new app to Visual Studio Mobile Center</em></p>
+</li>
+<li>
+<p>Enter "CoolBreeze" for the app name, and specify <strong>Android</strong> as the OS and <strong>Xamarin</strong> as the platform. Then click <strong>Add new app</strong>.</p>
+<p><a href="Images/portal-save-new-droid.png" target="_blank"><img src="Images/portal-save-new-droid.png" alt="Registering the Android version of CoolBreeze" style="max-width:100%;"></a></p>
+<p><em>Registering the Android version of CoolBreeze</em></p>
+</li>
+<li>
+<p>Click <strong>Xamarin.Forms</strong> for a summary of the steps required to add the Mobile Center SDK to your app. (This is for informational purposes only at the moment. You will make these changes in the next exercise.)</p>
+<p><a href="Images/portal-droid-getting-started.png" target="_blank"><img src="Images/portal-droid-getting-started.png" alt="Integrating the Mobile Center SDK" style="max-width:100%;"></a></p>
+<p><em>Integrating the Mobile Center SDK</em></p>
+</li>
+<li>
+<p>Click the Back button in the upper-left corner of the page to navigate back to the "My Apps" page.</p>
+<p><a href="Images/portal-back-button.png" target="_blank"><img src="Images/portal-back-button.png" alt="Navigating back to My Apps" style="max-width:100%;"></a></p>
+<p><em>Navigating back to My Apps</em></p>
+</li>
+<li>
+<p>Click <strong>Add new app</strong>. Enter "CoolBreeze" for the app name, and specify <strong>iOS</strong> as the OS and <strong>Xamarin</strong> as the platform. Then click <strong>Add new app</strong>.</p>
+<p><a href="Images/portal-save-new-ios.png" target="_blank"><img src="Images/portal-save-new-ios.png" alt="Registering the iOS version of CoolBreeze" style="max-width:100%;"></a></p>
+<p><em>Registering the iOS version of CoolBreeze</em></p>
+</li>
+</ol>
+<p>You have now registered the Android and iOS versions of the app with Visual Studio Mobile Center. You can't register the Windows version just yet, but Windows support is coming soon.</p>
+<p><a name="Exercise2"></a></p>
+<h2>Exercise 2: Add crash analytics support to the app</h2>
+<p>The Visual Studio Mobile Center SDK makes it easy to add logic to a Xamarin Forms app to generate crash analytics. In this exercise, you will add shared and platform-specific code to CoolBreeze to configure it so that crash information can be viewed in Visual Studio Mobile Center, and you will test your changes by temporarily adding code that generates an unhandled exception when the app starts up.</p>
+<ol>
+<li>
+<p>Open the <strong>CoolBreeze</strong> solution that you completed in Xamarin Challenge Part 2 in Visual Studio 2017.</p>
+</li>
+<li>
+<p>In Solution Explorer, right-click the <strong>CoolBreeze</strong> solution and select <strong>Manage NuGet Packages for Solution...</strong>.</p>
+<p><a href="Images/vs-manage-solution-packages.png" target="_blank"><img src="Images/vs-manage-solution-packages.png" alt="Managing NuGet packages for the solution" style="max-width:100%;"></a></p>
+<p><em>Managing NuGet packages for the solution</em></p>
+</li>
+<li>
+<p>Ensure that "Browse" is selected in the NuGet Package Manager, and type "Microsoft.Azure.Mobile.Analytics" (without quotation marks) into the search box. Select the <strong>Microsoft.Azure.Mobile.Analytics</strong> package. Then check the <strong>Project</strong> box to add the package to all of the projects in the solution, and click <strong>Install</strong>. When prompted to review changes, click <strong>OK</strong>.</p>
+<p><a href="Images/vs-select-install-analytics.png" target="_blank"><img src="Images/vs-select-install-analytics.png" alt="Installing Microsoft.Azure.Mobile.Analytics" style="max-width:100%;"></a></p>
+<p><em>Installing Microsoft.Azure.Mobile.Analytics</em></p>
+</li>
+<li>
+<p>Return to the NuGet Package Manager and once more, ensure that "Browse" is selected. Type "Microsoft.Azure.Mobile.Crashes" into the search box and select the <strong>Microsoft.Azure.Mobile.Crashes</strong> package. Then check the <strong>Project</strong> box to add the package to all of the projects in the solution, and click <strong>Install</strong>. When prompted to review changes, click <strong>OK</strong>.</p>
+<p><a href="Images/vs-select-install-crashes.png" target="_blank"><img src="Images/vs-select-install-crashes.png" alt="Installing Microsoft.Azure.Mobile.Crashes" style="max-width:100%;"></a></p>
+<p><em>Installing Microsoft.Azure.Mobile.Crashes</em></p>
+</li>
+<li>
+<p>In Solution Explorer, open the <strong>App.xaml.cs</strong> file in the <strong>CoolBreeze (Portable)</strong> project.</p>
+<p><a href="Images/vs-locate-app-xaml.png" target="_blank"><img src="Images/vs-locate-app-xaml.png" alt="Opening App.xaml.cs" style="max-width:100%;"></a></p>
+<p><em>Opening App.xaml.cs</em></p>
+</li>
+<li>
+<p>Add the following statements at the top of the file:</p>
+<div class="highlight highlight-source-cs"><pre><span class="pl-k">using</span> <span class="pl-en">Microsoft.Azure.Mobile</span>;
+<span class="pl-k">using</span> <span class="pl-en">Microsoft.Azure.Mobile.Analytics</span>;
+<span class="pl-k">using</span> <span class="pl-en">Microsoft.Azure.Mobile.Crashes</span>;</pre></div>
+</li>
+<li>
+<p>Add the following statement to the <code>OnStart</code> method:</p>
+<div class="highlight highlight-source-cs"><pre><span class="pl-en">MobileCenter.Start</span>(<span class="pl-en">typeof</span>(Analytics), <span class="pl-en">typeof</span>(Crashes));</pre></div>
+</li>
+<li>
+<p>In Solution Explorer, open the <strong>MainActivity.cs</strong> file in the <strong>CoolBreeze.Android</strong> project.</p>
+<p><a href="Images/vs-locate-main-activity.png" target="_blank"><img src="Images/vs-locate-main-activity.png" alt="Opening MainActivity.cs" style="max-width:100%;"></a></p>
+<p><em>Opening MainActivity.cs</em></p>
+</li>
+<li>
+<p>Add the following statement to the <code>OnCreate</code> method, right before the call to <code>LoadApplication</code>:</p>
+<div class="highlight highlight-source-cs"><pre><span class="pl-en">Microsoft.Azure.Mobile.MobileCenter.Configure</span>("ANDROID_APP_SECRET");</pre></div>
+</li>
+<li>
+<p>Return to the <a href="https://mobile.azure.com/apps">Visual Studio Mobile Center app portal</a> in your browser and click <strong>CoolBreeze for Android</strong>.</p>
+<p><a href="Images/portal-select-droid-app.png" target="_blank"><img src="Images/portal-select-droid-app.png" alt="Opening CoolBreeze for Android in the portal" style="max-width:100%;"></a></p>
+<p><em>Opening CoolBreeze for Android in the portal</em></p>
+</li>
+<li>
+<p>Click <strong>Manage App</strong> in the upper-right corner of the page.</p>
+<p><a href="Images/portal-click-manage-app.png" target="_blank"><img src="Images/portal-click-manage-app.png" alt="Managing the app" style="max-width:100%;"></a></p>
+<p><em>Managing the app</em></p>
+</li>
+<li>
+<p>Copy the value in the <strong>App secret</strong> box to the clipboard.</p>
+<p><a href="Images/portal-app-secret.png" target="_blank"><img src="Images/portal-app-secret.png" alt="Copying the app secret" style="max-width:100%;"></a></p>
+<p><em>Copying the app secret</em></p>
+</li>
+<li>
+<p>Return to <strong>MainActivity.cs</strong> in Visual Studio and replace "ANDROID_APP_SECRET" with the value on the clipboard.</p>
+<p><a href="Images/vs-updated-main-activity.png" target="_blank"><img src="Images/vs-updated-main-activity.png" alt="Adding the app secret to MainActivity.cs" style="max-width:100%;"></a></p>
+<p><em>Adding the app secret to MainActivity.cs</em></p>
+</li>
+<li>
+<p>Open the <strong>AppDelegate.cs</strong> file in the <strong>CoolBreeze.iOS</strong> project.</p>
+<p><a href="Images/vs-locate-app-delegate.png" target="_blank"><img src="Images/vs-locate-app-delegate.png" alt="Opening AppDelegate.cs" style="max-width:100%;"></a></p>
+<p><em>Opening AppDelegate.cs</em></p>
+</li>
+<li>
+<p>Add the following statement to the <code>FinishedLaunching</code> method, right before the call to <code>LoadApplication</code>:</p>
+<div class="highlight highlight-source-cs"><pre> <span class="pl-en">Microsoft.Azure.Mobile.MobileCenter.Configure</span>("IOS_APP_SECRET");</pre></div>
+</li>
+<li>
+<p>Return to the "My Apps" page in the <a href="https://mobile.azure.com/apps">Visual Studio Mobile Center app portal</a> and click <strong>CoolBreeze for iOS</strong>.</p>
+<p><a href="Images/portal-select-ios-app.png" target="_blank"><img src="Images/portal-select-ios-app.png" alt="Opening CoolBreeze for iOS in the portal" style="max-width:100%;"></a></p>
+<p><em>Opening CoolBreeze for iOS in the portal</em></p>
+</li>
+<li>
+<p>Click <strong>Manage App</strong> in the upper-right corner of the page.</p>
+<p><a href="Images/portal-click-manage-app.png" target="_blank"><img src="Images/portal-click-manage-app.png" alt="Managing the app" style="max-width:100%;"></a></p>
+<p><em>Managing the app</em></p>
+</li>
+<li>
+<p>Copy the value in the <strong>App secret</strong> box to the clipboard.</p>
+<p><a href="Images/portal-app-secret.png" target="_blank"><img src="Images/portal-app-secret.png" alt="Copying the app secret" style="max-width:100%;"></a></p>
+<p><em>Copying the app secret</em></p>
+</li>
+<li>
+<p>Return to <strong>AppDelegate.cs</strong> in Visual Studio and replace "IOS_APP_SECRET" with the value on the clipboard.</p>
+<p><a href="Images/vs-updated-app-delegate.png" target="_blank"><img src="Images/vs-updated-app-delegate.png" alt="Adding the app secret to AppDelegate.cs" style="max-width:100%;"></a></p>
+<p><em>Adding the app secret to AppDelegate.cs</em></p>
+</li>
+<li>
+<p>Now it's time generate a crash report and see how it looks in Visual Studio Mobile Center. To do that, you will temporarily add code to the app to generate a crash. Begin by opening the file named <strong>StartPage.xaml.cs</strong> in the <strong>CoolBreeze (Portable)</strong> project.</p>
+</li>
+<li>
+<p>Add the following statement to the <code>InitializeAppAsync</code> method in the <code>StartPage</code> class:</p>
+<div class="highlight highlight-source-cs"><pre><span class="pl-en">DateTime</span> <span class="pl-en">badDateTime</span> = <span class="pl-en">DateTime.Parse</span>("This is not a date or time");</pre></div>
+<p><a href="Images/vs-baddate-code.png" target="_blank"><img src="Images/vs-baddate-code.png" alt="Generating a crash in InitializeAppAsync" style="max-width:100%;"></a></p>
+<p><em>Generating a crash in InitializeAppAsync</em></p>
+</li>
+<li>
+<p>In Solution Explorer, right-click the <strong>CoolBreeze.Android</strong> project and select <strong>Set as StartUp Project</strong>.</p>
+<p><a href="Images/vs-set-as-startup.png" target="_blank"><img src="Images/vs-set-as-startup.png" alt="Making CoolBreeze.Android the startup project" style="max-width:100%;"></a></p>
+<p><em>Making CoolBreeze.Android the startup project</em></p>
+</li>
+<li>
+<p>Click the <strong>Run</strong> button to launch CoolBreeze in the selected Android emulator.</p>
+<p><a href="Images/run-android.png" target="_blank"><img src="Images/run-android.png" alt="Launching the Android version of the app" style="max-width:100%;"></a></p>
+<p><em>Launching the Android version of the app</em></p>
+</li>
+<li>
+<p>Confirm that shortly after the app loads in the emulator, an unhandled exception is thrown.</p>
+<p><a href="Images/vs-baddate-code-error.png" target="_blank"><img src="Images/vs-baddate-code-error.png" alt="Result of an unhandled exception" style="max-width:100%;"></a></p>
+<p><em>Result of an unhandled exception</em></p>
+</li>
+<li>
+<p>Crash data is initially stored on the local device, and is typically transmitted to Visual Studio Mobile Center the next time the app loads. In Visual Studio, return to <strong>StartPage.xaml.cs</strong> and remove the line of code that generates the unhandled exception.</p>
+<p><a href="Images/vs-badcode-removed.png" target="_blank"><img src="Images/vs-badcode-removed.png" alt="Fixing the code" style="max-width:100%;"></a></p>
+<p><em>Fixing the code</em></p>
+</li>
+<li>
+<p>Use Visual Studio's <strong>Debug</strong> &gt; <strong>Start Without Debugging</strong> command (or simply press <strong>CTRL+F5</strong>) to launch the app without the debugger attached.</p>
+<blockquote>
+<p>Crash data does not get transmitted to Visual Studio Mobile Center if the debugger is attached.</p>
+</blockquote>
+</li>
+<li>
+<p>Return to the <a href="https://mobile.azure.com/apps">Visual Studio Mobile Center</a> in your browser and open <strong>CoolBreeze for Android</strong>.</p>
+<p><a href="Images/portal-select-droid-app.png" target="_blank"><img src="Images/portal-select-droid-app.png" alt="Opening CoolBreeze for Android in the portal" style="max-width:100%;"></a></p>
+<p><em>Opening CoolBreeze for Android in the portal</em></p>
+</li>
+<li>
+<p>Click <strong>Crashes</strong>.</p>
+<p><a href="Images/portal-select-crashes.png" target="_blank"><img src="Images/portal-select-crashes.png" alt="Viewing crash reports" style="max-width:100%;"></a></p>
+<p><em>Viewing crash reports</em></p>
+</li>
+<li>
+<p>Observe the various charts displaying crash information, as well as the entry at the bottom of the page representing the crash that you generated moments ago. Note that the crash may not appear in the portal for 10 minutes or so. If it's not there, proceed with Exercise 3 of this challenge and return to the crash reports later.</p>
+<p><a href="Images/portal-new-crash-report.png" target="_blank"><img src="Images/portal-new-crash-report.png" alt="Crash reporting in Visual Studio Mobile Center" style="max-width:100%;"></a></p>
+<p><em>Crash reporting in Visual Studio Mobile Center</em></p>
+</li>
+</ol>
+<p>Having near real-time crash analytics available is important for any mobile app, but Visual Studio Mobile Center isn't limited to crash reports. It also offers services for continuous integration and automated testing and distribution of your app, and it provides information about real-world usage. Moreover, it provides back-end services for authentication, data syncing, and (soon) push notifications, making it a one-stop solution for building mobile apps that you can maintain and scale. For more information, see <a href="https://docs.microsoft.com/en-us/mobile-center/">https://docs.microsoft.com/en-us/mobile-center/</a>.</p>
+<p><a name="Exercise3"></a></p>
+<h2>Exercise 3: Submit your work and register for the prize drawing</h2>
+<p>If you have gotten this far, you have successfully completed all three parts of the Xamarin Challenge. As a reward for your hard work, you now have an opportunity to submit your completed app for a chance to win a brand new <a href="https://www.microsoftstore.com/store/msusa/en_US/pdp/productID.5074015900">Surface Studio</a>! In this exercise, you will add a page to CoolBreeze that lets you submit your work. Then you will run the app and use it to register for the prize drawing.</p>
+<ol>
+<li>
+<p>In Solution Explorer, right-click the <strong>CoolBreeze</strong> solution and select <strong>Manage NuGet Packages for Solution…</strong>.</p>
+<p><a href="Images/vs-manage-solution-packages.png" target="_blank"><img src="Images/vs-manage-solution-packages.png" alt="Managing NuGet packages for the solution" style="max-width:100%;"></a></p>
+<p><em>Managing NuGet packages for the solution</em></p>
+</li>
+<li>
+<p>Ensure that "Browse" is selected in the NuGet Package Manager, and type "WindowsAzure.Storage" into the search box. Select the <strong>WindowsAzure.Storage</strong> package. Then check the <strong>Project</strong> box to add the package to all of the projects in the solution, and click <strong>Install</strong>. When prompted to review changes, click <strong>OK</strong>. If prompted to accept a license, click <strong>I Accept</strong>.</p>
+<p><a href="Images/vs-install-storage.png" target="_blank"><img src="Images/vs-install-storage.png" alt="Installing WindowsAzure.Storage" style="max-width:100%;"></a></p>
+<p><em>Installing WindowsAzure.Storage</em></p>
+</li>
+<li>
+<p>In Solution Explorer, right-click the <strong>CoolBreeze (Portable)</strong> project and select <strong>Add</strong> &gt; <strong>New Item...</strong>. Then select <strong>Forms Blank Content Page Xaml</strong>, specify "SubmissionPage.xaml" as the name, and click <strong>Add</strong>.</p>
+<p><a href="Images/vs-add-new-pcl-item.png" target="_blank"><img src="Images/vs-add-new-pcl-item.png" alt="Adding a submission page" style="max-width:100%;"></a></p>
+<p><em>Adding a submission page</em></p>
+</li>
+<li>
+<p>Replace the contents of <strong>SubmissionPage.xaml</strong> with the following XAML:</p>
+<div class="highlight highlight-text-xml"><pre>&lt;?<span class="pl-ent">xml</span><span class="pl-e"> version</span>=<span class="pl-s"><span class="pl-pds">"</span>1.0<span class="pl-pds">"</span></span><span class="pl-e"> encoding</span>=<span class="pl-s"><span class="pl-pds">"</span>utf-8<span class="pl-pds">"</span></span> ?&gt;
+&lt;<span class="pl-ent">ContentPage</span> <span class="pl-e">xmlns</span>=<span class="pl-s"><span class="pl-pds">"</span>http://xamarin.com/schemas/2014/forms<span class="pl-pds">"</span></span> <span class="pl-e">Title</span>=<span class="pl-s"><span class="pl-pds">"</span>Submit<span class="pl-pds">"</span></span>
+             <span class="pl-e">xmlns</span><span class="pl-e">:</span><span class="pl-e">x</span>=<span class="pl-s"><span class="pl-pds">"</span>http://schemas.microsoft.com/winfx/2009/xaml<span class="pl-pds">"</span></span>
+             <span class="pl-e">x</span><span class="pl-e">:</span><span class="pl-e">Class</span>=<span class="pl-s"><span class="pl-pds">"</span>CoolBreeze.SubmissionPage<span class="pl-pds">"</span></span>&gt;
+
+    &lt;<span class="pl-ent">Grid</span>&gt;
+        &lt;<span class="pl-ent">StackLayout</span> <span class="pl-e">IsVisible</span>=<span class="pl-s"><span class="pl-pds">"</span>{Binding ChallengeSubmission.IsSubmitted, Converter={StaticResource BooleanToFalseConverter}}<span class="pl-pds">"</span></span> <span class="pl-e">Margin</span>=<span class="pl-s"><span class="pl-pds">"</span>30,20<span class="pl-pds">"</span></span>&gt;
+            &lt;<span class="pl-ent">Image</span> <span class="pl-e">HorizontalOptions</span>=<span class="pl-s"><span class="pl-pds">"</span>Start<span class="pl-pds">"</span></span> <span class="pl-e">WidthRequest</span>=<span class="pl-s"><span class="pl-pds">"</span>72<span class="pl-pds">"</span></span> <span class="pl-e">HeightRequest</span>=<span class="pl-s"><span class="pl-pds">"</span>72<span class="pl-pds">"</span></span> <span class="pl-e">Source</span>=<span class="pl-s"><span class="pl-pds">"</span>icon.png<span class="pl-pds">"</span></span>/&gt;
+            &lt;<span class="pl-ent">Label</span> <span class="pl-e">VerticalOptions</span>=<span class="pl-s"><span class="pl-pds">"</span>Center<span class="pl-pds">"</span></span> <span class="pl-e">FontSize</span>=<span class="pl-s"><span class="pl-pds">"</span>Large<span class="pl-pds">"</span></span> <span class="pl-e">Text</span>=<span class="pl-s"><span class="pl-pds">"</span>Submit Challenge<span class="pl-pds">"</span></span> /&gt;
+            &lt;<span class="pl-ent">Label</span> <span class="pl-e">FontSize</span>=<span class="pl-s"><span class="pl-pds">"</span>Medium<span class="pl-pds">"</span></span> <span class="pl-e">Text</span>=<span class="pl-s"><span class="pl-pds">"</span>Congratulations! Now that you've completed your final Xamarin app development challenge, you can now submit your solution to be entered to win a Surface Studio!<span class="pl-pds">"</span></span> /&gt;
+            &lt;<span class="pl-ent">Label</span> <span class="pl-e">FontAttributes</span>=<span class="pl-s"><span class="pl-pds">"</span>Bold<span class="pl-pds">"</span></span> <span class="pl-e">IsVisible</span>=<span class="pl-s"><span class="pl-pds">"</span>{Binding ChallengeSubmission.IsAuthenticated}<span class="pl-pds">"</span></span> <span class="pl-e">FontSize</span>=<span class="pl-s"><span class="pl-pds">"</span>Medium<span class="pl-pds">"</span></span> <span class="pl-e">Text</span>=<span class="pl-s"><span class="pl-pds">"</span>Tap 'Submit my solution' to submit your solution.<span class="pl-pds">"</span></span> /&gt;
+            &lt;<span class="pl-ent">Button</span> <span class="pl-e">WidthRequest</span>=<span class="pl-s"><span class="pl-pds">"</span>200<span class="pl-pds">"</span></span> <span class="pl-e">TextColor</span>=<span class="pl-s"><span class="pl-pds">"</span>White<span class="pl-pds">"</span></span> <span class="pl-e">BackgroundColor</span>=<span class="pl-s"><span class="pl-pds">"</span>{StaticResource AppAccentColor}<span class="pl-pds">"</span></span> <span class="pl-e">HorizontalOptions</span>=<span class="pl-s"><span class="pl-pds">"</span>Start<span class="pl-pds">"</span></span> <span class="pl-e">Text</span>=<span class="pl-s"><span class="pl-pds">"</span>Submit my solution<span class="pl-pds">"</span></span> <span class="pl-e">Command</span>=<span class="pl-s"><span class="pl-pds">"</span>{Binding ChallengeSubmission.SubmitChallengeCommand}<span class="pl-pds">"</span></span>/&gt;
+        &lt;/<span class="pl-ent">StackLayout</span>&gt;
+
+        &lt;<span class="pl-ent">StackLayout</span> <span class="pl-e">IsVisible</span>=<span class="pl-s"><span class="pl-pds">"</span>{Binding ChallengeSubmission.IsSubmitted}<span class="pl-pds">"</span></span> <span class="pl-e">Margin</span>=<span class="pl-s"><span class="pl-pds">"</span>30,20<span class="pl-pds">"</span></span>&gt;
+            &lt;<span class="pl-ent">Image</span> <span class="pl-e">HorizontalOptions</span>=<span class="pl-s"><span class="pl-pds">"</span>Start<span class="pl-pds">"</span></span> <span class="pl-e">WidthRequest</span>=<span class="pl-s"><span class="pl-pds">"</span>72<span class="pl-pds">"</span></span> <span class="pl-e">HeightRequest</span>=<span class="pl-s"><span class="pl-pds">"</span>72<span class="pl-pds">"</span></span> <span class="pl-e">Source</span>=<span class="pl-s"><span class="pl-pds">"</span>icon.png<span class="pl-pds">"</span></span>/&gt;
+            &lt;<span class="pl-ent">Label</span> <span class="pl-e">VerticalOptions</span>=<span class="pl-s"><span class="pl-pds">"</span>Center<span class="pl-pds">"</span></span> <span class="pl-e">FontSize</span>=<span class="pl-s"><span class="pl-pds">"</span>Large<span class="pl-pds">"</span></span> <span class="pl-e">Text</span>=<span class="pl-s"><span class="pl-pds">"</span>Submission Complete<span class="pl-pds">"</span></span> /&gt;
+            &lt;<span class="pl-ent">Label</span> <span class="pl-e">Margin</span>=<span class="pl-s"><span class="pl-pds">"</span>0,30<span class="pl-pds">"</span></span> <span class="pl-e">FontSize</span>=<span class="pl-s"><span class="pl-pds">"</span>Medium<span class="pl-pds">"</span></span> <span class="pl-e">Text</span>=<span class="pl-s"><span class="pl-pds">"</span>Congratulations! Your projects have been submitted successfully to the Xamarin Challenge Gods!<span class="pl-pds">"</span></span> /&gt;
+        &lt;/<span class="pl-ent">StackLayout</span>&gt;
+
+        &lt;<span class="pl-ent">ActivityIndicator</span> <span class="pl-e">Color</span>=<span class="pl-s"><span class="pl-pds">"</span>{StaticResource AppAccentColor}<span class="pl-pds">"</span></span> <span class="pl-e">VerticalOptions</span>=<span class="pl-s"><span class="pl-pds">"</span>Center<span class="pl-pds">"</span></span> <span class="pl-e">HorizontalOptions</span>=<span class="pl-s"><span class="pl-pds">"</span>Center<span class="pl-pds">"</span></span> <span class="pl-e">IsRunning</span>=<span class="pl-s"><span class="pl-pds">"</span>{Binding IsBusy}<span class="pl-pds">"</span></span> <span class="pl-e">IsEnabled</span>=<span class="pl-s"><span class="pl-pds">"</span>{Binding IsBusy}<span class="pl-pds">"</span></span> <span class="pl-e">IsVisible</span>=<span class="pl-s"><span class="pl-pds">"</span>{Binding IsBusy}<span class="pl-pds">"</span></span>&gt;
+            &lt;<span class="pl-ent">ActivityIndicator</span>.WidthRequest&gt;
+                &lt;<span class="pl-ent">OnPlatform</span> <span class="pl-e">x</span><span class="pl-e">:</span><span class="pl-e">TypeArguments</span>=<span class="pl-s"><span class="pl-pds">"</span>x:Double<span class="pl-pds">"</span></span> <span class="pl-e">iOS</span>=<span class="pl-s"><span class="pl-pds">"</span>100<span class="pl-pds">"</span></span> <span class="pl-e">Android</span>=<span class="pl-s"><span class="pl-pds">"</span>100<span class="pl-pds">"</span></span> <span class="pl-e">WinPhone</span>=<span class="pl-s"><span class="pl-pds">"</span>400<span class="pl-pds">"</span></span> /&gt;
+            &lt;/<span class="pl-ent">ActivityIndicator</span>.WidthRequest&gt;
+        &lt;/<span class="pl-ent">ActivityIndicator</span>&gt;
+    &lt;/<span class="pl-ent">Grid</span>&gt;
+&lt;/<span class="pl-ent">ContentPage</span>&gt;</pre></div>
+</li>
+<li>
+<p>Open <strong>SubmissionPage.xaml.cs</strong> and replace its contents with the following code:</p>
+<div class="highlight highlight-source-cs"><pre><span class="pl-k">using</span> <span class="pl-en">System</span>;
+<span class="pl-k">using</span> <span class="pl-en">System.Collections.Generic</span>;
+<span class="pl-k">using</span> <span class="pl-en">System.Linq</span>;
+<span class="pl-k">using</span> <span class="pl-en">System.Text</span>;
+<span class="pl-k">using</span> <span class="pl-en">System.Threading.Tasks</span>;
+
+<span class="pl-k">using</span> <span class="pl-en">Xamarin.Forms</span>;
+
+<span class="pl-k">namespace</span> <span class="pl-en">CoolBreeze</span>
+{
+    <span class="pl-k">public</span> <span class="pl-k">partial</span> <span class="pl-k">class</span> <span class="pl-en">SubmissionPage</span> : <span class="pl-en">ContentPage</span>
+    {   
+        <span class="pl-k">public</span> <span class="pl-en">SubmissionPage</span>()
+        {
+            InitializeComponent();
+        }
+
+        <span class="pl-k">protected</span> <span class="pl-k">override</span> <span class="pl-k">void</span> <span class="pl-en">OnAppearing</span>()
+        {
+            <span class="pl-c1">this</span>.BindingContext = App.ViewModel;
+            <span class="pl-c1">base</span>.OnAppearing();
+        }
+    }
+}
+</pre></div>
+</li>
+<li>
+<p>Right-click the "Models" folder in the <strong>CoolBreeze (Portable)</strong> project and use the <strong>Add</strong> &gt; <strong>Class</strong> command to add a class file named "SubmissionInformation.cs." Then replace the contents of the file with the following code:</p>
+<div class="highlight highlight-source-cs"><pre><span class="pl-k">using</span> <span class="pl-en">CoolBreeze.Common</span>;
+<span class="pl-k">using</span> <span class="pl-en">Microsoft.WindowsAzure.Storage.Blob</span>;
+<span class="pl-k">using</span> <span class="pl-en">System</span>;
+<span class="pl-k">using</span> <span class="pl-en">System.Threading.Tasks</span>;
+
+<span class="pl-k">namespace</span> <span class="pl-en">CoolBreeze</span>
+{
+    <span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">SubmissionInformation</span> : <span class="pl-en">Common.ObservableBase</span>
+    {
+        <span class="pl-k">private </span><span class="pl-k">bool</span> <span class="pl-en">_isBusy</span>;
+        <span class="pl-k">public </span><span class="pl-k">bool</span> <span class="pl-en">IsBusy</span>
+        {
+            <span class="pl-k">get</span> { <span class="pl-k">return</span> <span class="pl-c1">this</span>._isBusy; }
+            <span class="pl-k">set</span> { <span class="pl-c1">this</span>.SetProperty(ref <span class="pl-c1">this</span>._isBusy, <span class="pl-k">value</span>); }
+        }
+
+        <span class="pl-k">private </span><span class="pl-k">bool</span> <span class="pl-en">_isSubmitted</span>;
+        <span class="pl-k">public </span><span class="pl-k">bool</span> <span class="pl-en">IsSubmitted</span>
+        {
+            <span class="pl-k">get</span> { <span class="pl-k">return</span> <span class="pl-c1">this</span>._isSubmitted; }
+            <span class="pl-k">set</span> { <span class="pl-c1">this</span>.SetProperty(ref <span class="pl-c1">this</span>._isSubmitted, <span class="pl-k">value</span>); }
+        }
+
+        <span class="pl-k">public </span><span class="pl-k">string</span> <span class="pl-en">SubmissionIcon</span>
+        {
+            <span class="pl-k">get</span> { <span class="pl-k">return</span> <span class="pl-s"><span class="pl-pds">"</span>key<span class="pl-pds">"</span></span>; }
+        }
+
+        <span class="pl-k">private </span><span class="pl-k">string</span> <span class="pl-en">_submitLabel</span>;
+        <span class="pl-k">public </span><span class="pl-k">string</span> <span class="pl-en">SubmitLabel</span>
+        {
+            <span class="pl-k">get</span> { <span class="pl-k">return</span> <span class="pl-c1">this</span>._submitLabel; }
+            <span class="pl-k">set</span> { <span class="pl-c1">this</span>.SetProperty(ref <span class="pl-c1">this</span>._submitLabel, <span class="pl-k">value</span>); }
+        }
+
+        <span class="pl-k">private</span> <span class="pl-k">bool</span> <span class="pl-en">_canSubmit</span>() =&gt; (Microsoft.Azure.Mobile.MobileCenter.InstallId.HasValue);
+
+        <span class="pl-k">private </span><span class="pl-k">string</span> <span class="pl-en">_submissionLocation</span> = <span class="pl-s"><span class="pl-pds">"</span>https://traininglabs.blob.core.windows.net/challenge-submissions?sv=2015-12-11&amp;si=challenge-submissions-15AA6639B2C&amp;sr=c&amp;sig=lRYUs6%2FdEc3BfEMkKLlUtVOLeYuUhb%2F2juyVP1ms6UY%3D<span class="pl-pds">"</span></span>;
+        <span class="pl-k">private </span><span class="pl-k">string</span> <span class="pl-en">_registrationLocation</span> = <span class="pl-pds">$"</span><span class="pl-s">http://traininglabservices.azurewebsites.net/api/weather/register?registrationCode=</span>{App.RegistrationCode}<span class="pl-pds">"</span>;	
+
+        <span class="pl-k">public </span><span class="pl-en">System.Windows.Input.ICommand</span> <span class="pl-en">SubmitChallengeCommand</span>
+        {
+            <span class="pl-k">get</span>
+            {
+                <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-en">RelayCommand</span>(async () =&gt;
+                {
+                    <span class="pl-c1">this</span>.IsBusy = <span class="pl-c1">true</span>;
+
+                    <span class="pl-k">await</span> SubmitChallengeAsync(App.RegistrationCode);
+
+                    <span class="pl-c1">this</span>.IsSubmitted = <span class="pl-c1">true</span>;
+                    <span class="pl-c1">this</span>.IsBusy = <span class="pl-c1">false</span>;
+
+                }, _canSubmit);
+            }
+        }
+
+        <span class="pl-k">public</span> <span class="pl-k">async</span> <span class="pl-en">Task</span>&lt;<span class="pl-k">bool</span>&gt; <span class="pl-en">SubmitChallengeAsync</span>(<span class="pl-k">string</span> <span class="pl-smi">registrationCode</span>)
+        {
+            <span class="pl-k">bool</span> <span class="pl-en">successful</span> = <span class="pl-c1">false</span>;
+
+            <span class="pl-en">CloudBlobContainer</span> <span class="pl-en">container</span> = <span class="pl-k">new</span> <span class="pl-en">CloudBlobContainer</span>(<span class="pl-k">new</span> <span class="pl-en">Uri</span>(_submissionLocation));
+
+            <span class="pl-k">var</span> <span class="pl-en">blob </span>= container.GetBlockBlobReference(<span class="pl-pds">$"</span>{App.RegistrationCode}<span class="pl-s">.submission</span><span class="pl-pds">"</span>);
+
+            <span class="pl-k">try</span>
+            {
+                <span class="pl-k">var</span> <span class="pl-en">finalSubmission </span>= new
+                {
+                    InstallId = Microsoft.Azure.Mobile.MobileCenter.InstallId.ToString(),
+                    RegistrationCode = App.RegistrationCode,
+                };
+
+                <span class="pl-k">await</span> blob.UploadTextAsync(Newtonsoft.Json.JsonConvert.SerializeObject(finalSubmission));
+
+                successful = <span class="pl-c1">true</span>;
+            }
+            <span class="pl-k">catch</span> (Exception ex)
+            {
+            }
+
+            <span class="pl-k">return</span> successful;
+        }
+
+        <span class="pl-k">public</span> <span class="pl-k">async</span> <span class="pl-k">void</span> <span class="pl-en">RegisterAsync</span>(<span class="pl-k">string</span> <span class="pl-smi">registrationCode</span>)
+        {
+            System.Net.Http.<span class="pl-en">HttpClient</span> <span class="pl-en">client</span> = <span class="pl-k">new</span> <span class="pl-en">System</span>.Net.Http.HttpClient();
+
+            <span class="pl-k">await</span> client.PostAsync(_registrationLocation, <span class="pl-c1">null</span>);
+        }
+    }
+   
+}</pre></div>
+</li>
+<li>
+<p>Open <strong>MainViewModel.cs</strong> in the "ViewModels" folder and replace the class constructor with the following code:</p>
+<div class="highlight highlight-source-cs"><pre><span class="pl-k">public</span> MainViewModel()
+{
+    <span class="pl-c1">this</span>.IsBusy = <span class="pl-c1">true</span>;
+    <span class="pl-c1">this</span>.NeedsRefresh = <span class="pl-c1">true</span>;
+    <span class="pl-c1">this</span>.LocationType = LocationType.City;
+    <span class="pl-c1">this</span>.CurrentConditions = <span class="pl-k">new</span> <span class="pl-en">WeatherInformation</span>();
+    <span class="pl-c1">this</span>.Forecast = <span class="pl-k">new</span> <span class="pl-en">ObservableCollection</span>&lt;WeatherInformation&gt;();
+
+    <span class="pl-c1">this</span>.ChallengeSubmission = <span class="pl-k">new</span> <span class="pl-en">SubmissionInformation</span>()
+    {   
+        IsSubmitted = <span class="pl-c1">false</span>,
+    };
+
+    <span class="pl-c1">this</span>.ChallengeSubmission.RegisterAsync(App.RegistrationCode);
+}
+
+<span class="pl-k">private</span> <span class="pl-en">SubmissionInformation</span> <span class="pl-en">_challengeSubmission</span>;
+<span class="pl-k">public</span> <span class="pl-en">SubmissionInformation</span> ChallengeSubmission
+{
+    <span class="pl-k">get</span> { <span class="pl-k">return</span> <span class="pl-c1">this</span>._challengeSubmission; }
+    <span class="pl-k">set</span> { <span class="pl-c1">this</span>.SetProperty(ref <span class="pl-c1">this</span>._challengeSubmission, <span class="pl-k">value</span>); }
+}</pre></div>
+</li>
+<li>
+<p>Open <strong>StartPage.xaml</strong> in the <strong>CoolBreeze (Portable)</strong> project. Locate the <code>TabbedPage.ToolbarItems</code> element and add the following <code>ToolbarItem</code> declaration before the <code>ToolbarItem</code> declaration that is already there:</p>
+<div class="highlight highlight-text-xml"><pre> &lt;<span class="pl-ent">ToolbarItem</span> <span class="pl-e">Text</span>=<span class="pl-s"><span class="pl-pds">"</span>SUBMIT CHALLENGE<span class="pl-pds">"</span></span> <span class="pl-e">Order</span>=<span class="pl-s"><span class="pl-pds">"</span>Primary<span class="pl-pds">"</span></span> <span class="pl-e">Clicked</span>=<span class="pl-s"><span class="pl-pds">"</span>ViewSubmitChallengeClicked<span class="pl-pds">"</span></span> /&gt;</pre></div>
+<p><a href="Images/vs-new-toolbar-item.png" target="_blank"><img src="Images/vs-new-toolbar-item.png" alt="Updating StartPage.xaml" style="max-width:100%;"></a></p>
+<p><em>Updating StartPage.xaml</em></p>
+</li>
+<li>
+<p>Open <strong>StartPage.xaml.cs</strong> and add the following method to the <code>StartPage</code> class:</p>
+<div class="highlight highlight-source-cs"><pre><span class="pl-k">private</span> <span class="pl-k">async</span> <span class="pl-k">void</span> <span class="pl-en">ViewSubmitChallengeClicked</span>(<span class="pl-k">object</span> <span class="pl-smi">sender</span>, <span class="pl-en">EventArgs</span> <span class="pl-smi">e</span>)
+{
+    <span class="pl-k">await</span> Navigation.PushAsync(<span class="pl-k">new</span> <span class="pl-en">SubmissionPage</span>());
+}</pre></div>
+</li>
+<li>
+<p>Now it's time to run the app and submit your work. Launch the app and click <strong>SUBMIT CHALLENGE</strong>.</p>
+<p><a href="Images/app-click-toolbar.png" target="_blank"><img src="Images/app-click-toolbar.png" alt="Submitting your work" style="max-width:100%;"></a></p>
+<p><em>Submitting your work</em></p>
+</li>
+<li>
+<p>Click <strong>SUBMIT MY SOLUTION</strong> to submit your solution and register to win a Surface Studio.</p>
+<p><a href="Images/app-click-submit-solution.png" target="_blank"><img src="Images/app-click-submit-solution.png" alt="Submitting your solution" style="max-width:100%;"></a></p>
+<p><em>Submitting your solution</em></p>
+</li>
+<li>
+<p>Confirm that CoolBreeze reports that your submission is complete.</p>
+<p><a href="Images/app-challenge-submitted.png" target="_blank"><img src="Images/app-challenge-submitted.png" alt="A successful submission" style="max-width:100%;"></a></p>
+<p><em>A successful submission</em></p>
+</li>
+</ol>
+<p>Congratulations! Your entry has been submitted. Good luck with the prize drawing. And enjoy building cross-platform mobile apps with Visual Studio 2017, Xamarin Forms, and Visual Studio Mobile Center.</p>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
